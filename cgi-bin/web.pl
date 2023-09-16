@@ -30,7 +30,7 @@ $DarkGlass::ServerUrl = "https://ursalang.github.io";
 # Root of site relative to root of server
 $DarkGlass::BaseUrl = "/";
 # Directory of site in file system
-$DarkGlass::DocumentRoot = "/home/rrt/Software/ursalang.github.io/pages";
+$DarkGlass::DocumentRoot = "../pages";
 # Site name
 $DarkGlass::Title = "The Ursa programming language";
 # Site owner's name and email address
