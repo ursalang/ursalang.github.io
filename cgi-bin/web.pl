@@ -5,12 +5,6 @@
 # Distributed under the GNU General Public License version 3, or (at
 # your option) any later version.
 
-# FIXME: Remove cgi-bin from PATH
-BEGIN { # Run before "use" statements so variables are defined for other modules' initialization
-  $ENV{HOME} = '/home/rrt';
-  $ENV{PATH} = "$ENV{HOME}/public_html/cgi-bin:/usr/local/bin:/bin:/usr/bin";
-}
-
 use utf8;
 use strict;
 use warnings;
