@@ -1,0 +1,2 @@
+#!/bin/sh
+./cgi-bin/static-site --force ./cgi-bin/web.pl ./_site

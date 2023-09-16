@@ -1,0 +1,28 @@
+{
+  "name": "webpack-static-site-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack serve --static ."
+  },
+  "author": "James Hibbard",
+  "license": "ISC",
+  "dependencies": {
+    "@ursalang/ursa": "^0.0.7",
+    "assert": "^2.1.0",
+    "jquery": "^3.5.1",
+    "lightbox2": "^2.11.3",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "hook-shell-script-webpack-plugin": "^0.3.0",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}
