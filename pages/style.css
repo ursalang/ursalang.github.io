@@ -75,7 +75,7 @@ main {
   float: right;
 }
 
-/* Highlight "Try Ursa!" tab */
-#try-tab {
-  background-color: var(--bs-btn-active-bg);
+/* Highlighted buttons */
+.highlight-button {
+  background-color: var(--bs-blue);
 }

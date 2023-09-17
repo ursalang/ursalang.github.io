@@ -23,7 +23,7 @@
                         <button class="nav-link" id="closures-tab" data-bs-toggle="tab" data-bs-target="#closures-tab-pane" type="button" role="tab" aria-controls="closures-tab-pane" aria-selected="false">Closures</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link btn btn-primary" id="try-tab" data-bs-toggle="tab" data-bs-target="#try-tab-pane" type="button" role="tab" aria-controls="try-tab-pane" aria-selected="false">Try Ursa!</button>
+                        <button class="nav-link btn btn-primary highlight-button" id="try-tab" data-bs-toggle="tab" data-bs-target="#try-tab-pane" type="button" role="tab" aria-controls="try-tab-pane" aria-selected="false">Try Ursa!</button>
                     </li>
                 </ul>
             </div>
