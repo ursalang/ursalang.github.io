@@ -20,6 +20,7 @@ use warnings;
 use List::Util 'min';
 use POSIX 'strftime';
 use File::Basename;
+use File::Spec::Functions qw(abs2rel);
 use File::stat;
 use File::Temp qw(tempdir);
 use Encode;
@@ -59,7 +60,7 @@ use MIME::Convert;
 
 
 # Config vars
-use vars qw($ServerUrl $BaseUrl $DocumentRoot $Recent $Title $Author $Email %Macros);
+use vars qw($ServerUrl $BaseUrl $DocumentRoot $Title $Author $Email %Macros);
 
 # Computed globals
 use vars qw($DGSuffix @Index %Index);
@@ -172,6 +173,7 @@ sub convert {
       $path =~ s/ /%20/g;    # escape space
       $path = $BaseUrl . $path;
       $path =~ s|//+|/|g;     # compress /'s; mostly cosmetic, & avoid leading // in output
+      $path = abs2rel($path, dirname($BaseUrl . $Macros{file}())); # Make path relative to page
       $path .= "?$param" if $param;
       return $path;
     },

@@ -7,8 +7,6 @@ $(function () {
   const $ursaResult = $(".ursa-result")
 
   const compiled = compile($ursaInput.text())
-  console.log(compiled)
   const val = runArk(compiled, new Environment())
-  console.debug(val)
   $ursaResult.text(toJs(val).toString())
 });
