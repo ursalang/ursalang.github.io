@@ -77,6 +77,7 @@ let accums2 = newAccums()
             </div>
         </div>
     </div>
+    <div class="rust-code">Here some Rust code will go.</div>
 </div>
 
-<script src="/bundle.jsm"></script>
+<script src="/bundle.js"></script>

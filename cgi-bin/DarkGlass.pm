@@ -727,8 +727,9 @@ sub doRequest {
   } else {
     # FIXME: Following block made redundant by Nancy
     my $ext = "html";
-    my $filename = fileparse($file, qr/\.[^.]*/) . ".$ext";
+    my $filename = $file;
     if (basename($file) eq "index.html") {
+      $filename = fileparse($file, qr/\.[^.]*/) . ".html";
       $text = slurp($file, {binmode => ':utf8'});
     } else {
       ($text, $desttype) = render($file, $page, $srctype, $desttype);
@@ -744,7 +745,7 @@ sub doRequest {
         $ext = extensions($desttype);
         # FIXME: put "effective" file extension in the URL, "real" extension in script parameters (and MIME type?), and remove content-disposition
         if ($ext && $ext ne "") {
-          $filename = fileparse($file, qr/\.[^.]*/) . ".$ext";
+          $filename = fileparse($file, qr/\.[^.]*/) . ".$ext" if $desttype ne $srctype;
           my $latin1_filename = encode("iso-8859-1", $filename);
           $latin1_filename =~ s/[%"]//g;
           my $utf8_filename = escape($filename);
