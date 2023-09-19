@@ -85,6 +85,10 @@ pre {
   margin-bottom: 0;
 }
 
+#ursa-input {
+  width: 100%;
+}
+
 .ursa-error {
   color: red;
 }
