@@ -3,7 +3,7 @@ const HookShellScriptPlugin = require('hook-shell-script-webpack-plugin')
 const WatchExternalFilesPlugin = require('webpack-watch-files-plugin').default
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: './js/main.js',
     mode: 'development',
     devServer: {
         static: { directory: `${__dirname}/_site` }

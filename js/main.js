@@ -1,3 +1,4 @@
+window.$ = require('jquery')
 import { runArk, serialize } from '@ursalang/ursa/lib/ark/interp'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
