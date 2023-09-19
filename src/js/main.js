@@ -1,12 +1,41 @@
-import { runArk, toJs } from '@ursalang/ursa/lib/ark/interp'
+import { runArk, serialize } from '@ursalang/ursa/lib/ark/interp'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 import { Environment } from '@ursalang/ursa/lib/ark/compiler'
 
-$(function () {
-  const $ursaInput = $(".ursa-input")
-  const $ursaResult = $(".ursa-result")
+function debounce(func, timeout) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer)
+    timer = setTimeout(() => func.apply(this, args), timeout)
+  }
+}
 
-  const compiled = compile($ursaInput.text())
-  const val = runArk(compiled, new Environment())
-  $ursaResult.text(toJs(val).toString())
-});
+$(function () {
+  const $ursaInput = $("#ursa-input")
+  const $ursaResult = $("#ursa-result")
+
+  function debouncedUpdate() {
+    if ($ursaInput.text().length < 1000) {
+      highlightShortDebounce()
+    } else {
+      highlightLongDebounce()
+    }
+  }
+
+  $ursaInput.on('input', debouncedUpdate)
+
+  function evaluate() {
+    try {
+      const compiled = compile($ursaInput.val())
+      const val = runArk(compiled, new Environment())
+      $ursaResult.text(serialize(val))
+    } catch (error) {
+      $ursaResult.html(`<span class="ursa-error">${error}</span`)
+    }
+  }
+
+  const highlightShortDebounce = debounce(evaluate, 50)
+  const highlightLongDebounce = debounce(evaluate, 500)
+
+  evaluate()
+})

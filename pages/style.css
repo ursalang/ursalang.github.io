@@ -84,3 +84,7 @@ main {
 pre {
   margin-bottom: 0;
 }
+
+.ursa-error {
+  color: red;
+}

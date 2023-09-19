@@ -33,8 +33,8 @@
                 <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">$paste{sum-list-return.html}</div>
                 <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">$paste{two-double-closures.html}</div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
-                    <p>Let’s get Ursa to evaluate: <code class="ursa-input">6 * 9</code></p>
-                    <p><code class="ursa-result"></code></p>
+                    <textarea id="ursa-input" rows="6" cols="60" spellcheck="false">6 * 9</textarea>
+                    <div class="card-body" id="ursa-result"></div>
                 </div>
             </div>
         </div>
