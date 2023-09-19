@@ -1,6 +1,5 @@
 import { runArk, serialize } from '@ursalang/ursa/lib/ark/interp'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
-import { Environment } from '@ursalang/ursa/lib/ark/compiler'
 
 function debounce(func, timeout) {
   let timer;
@@ -27,7 +26,7 @@ $(function () {
   function evaluate() {
     try {
       const compiled = compile($ursaInput.val())
-      const val = runArk(compiled, new Environment())
+      const val = runArk(compiled)
       $ursaResult.text(serialize(val))
     } catch (error) {
       $ursaResult.html(`<span class="ursa-error">${error}</span`)
