@@ -28,48 +28,10 @@
                 </ul>
             </div>
             <div class="card-body tab-content">
-                <!-- FIXME: template in the demo source files -->
-                <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">
-                    <code>print("hello, woods!")</code>
-                </div>
-                <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0">
-                    <pre>let fac = null
-fn fac(x) {
-  if x == 0 {1} else {x * fac(x - 1)}
-}
-fac(6)</pre>
-                </div>
-                <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">
-                    <pre>let sum = fn(l) {
-  let tot = 0
-  let i = 0
-  loop {
-    if i == l.length { return tot }
-    tot = tot + l[i]
-    i = i + 1
-  }
-}
-sum([10, 30, 50, 5, 5])</pre>
-                </div>
-                <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">
-                    <pre>let newAccums = fn() {
-  let tot = 0
-  [
-    fn(x) {
-      tot = tot + x
-    },
-    fn(x) {
-      tot = tot + x
-    },
-  ]
-}
-let accums = newAccums()
-let accums2 = newAccums()
-[
-  [accums[0](1), accums[0](1), accums2[0](1)],
-  [accums[1](1), accums[1](1), accums2[1](1)],
-]</pre>
-                </div>
+                <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">$paste{hello-woods.html}</div>
+                <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0">$paste{fac-symbol-recursion.html}</div>
+                <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">$paste{sum-list-return.html}</div>
+                <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">$paste{two-double-closures.html}</div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
                     <p>Let’s get Ursa to evaluate: <code class="ursa-input">6 * 9</code></p>
                     <p><code class="ursa-result"></code></p>
@@ -77,7 +39,6 @@ let accums2 = newAccums()
             </div>
         </div>
     </div>
-    <div class="rust-code">Here some Rust code will go.</div>
 </div>
 
 <script src="/bundle.js"></script>

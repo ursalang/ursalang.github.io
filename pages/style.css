@@ -79,3 +79,8 @@ main {
 .highlight-button {
   background-color: var(--bs-blue);
 }
+
+/* Code examples */
+pre {
+  margin-bottom: 0;
+}

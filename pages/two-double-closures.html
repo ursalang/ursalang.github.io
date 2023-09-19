@@ -1,0 +1,18 @@
+<div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">newAccums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">  </span><span class="p">[</span>
+<span class="w">    </span><span class="kd">fn</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="kd">fn</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tot</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">x</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">accums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newAccums</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">accums2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">newAccums</span><span class="p">()</span>
+<span class="p">[</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">accums</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nx">accums</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nx">accums2</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">1</span><span class="p">)],</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">accums</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nx">accums</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="nx">accums2</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="mi">1</span><span class="p">)],</span>
+<span class="p">]</span>
+</pre></div>
