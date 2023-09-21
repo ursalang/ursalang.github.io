@@ -1,5 +1,5 @@
 window.$ = require('jquery')
-import { runArk, serialize } from '@ursalang/ursa/lib/ark/interp'
+import { runArk, serialize, globals, Ref, Null, NativeFn, toJs } from '@ursalang/ursa/lib/ark/interp'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 function debounce(func, timeout) {
@@ -13,6 +13,7 @@ function debounce(func, timeout) {
 $(function () {
   const $ursaInput = $("#ursa-input")
   const $ursaResult = $("#ursa-result")
+  const $ursaOutput = $("#ursa-output")
 
   function debouncedUpdate() {
     if ($ursaInput.text().length < 1000) {
@@ -23,6 +24,12 @@ $(function () {
   }
 
   $ursaInput.on('input', debouncedUpdate)
+
+  globals.set('print', new Ref(new NativeFn('print', (obj) => {
+    const output = toJs(obj).toString()
+    $ursaOutput.text(output)
+    return new Null()
+  })))
 
   function evaluate() {
     try {

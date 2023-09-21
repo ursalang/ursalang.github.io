@@ -9,7 +9,7 @@
   "author": "Reuben Thomas",
   "license": "ISC",
   "dependencies": {
-    "@ursalang/ursa": "^0.0.7",
+    "@ursalang/ursa": "^0.0.8",
     "jquery": "^3.7.0",
     "node-polyfill-webpack-plugin": "^2.0.1"
   },

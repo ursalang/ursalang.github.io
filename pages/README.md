@@ -34,7 +34,14 @@
                 <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">$paste{two-double-closures.html}</div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
                     <textarea id="ursa-input" rows="6" spellcheck="false">6 * 9</textarea>
-                    <div class="card-body" id="ursa-result"></div>
+                    <div class="card">
+                        <div class="card-header"><h6>Result</h6></div>
+                        <div class="card-body" id="ursa-result"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Output</h6></div>
+                        <div class="card-body" id="ursa-output"></div>
+                    </div>
                 </div>
             </div>
         </div>
