@@ -1,6 +1,7 @@
 # IDE and editor support
 
 * [Visual Studio Code extension](https://github.com/ursalang/ursa-vscode) (very basic for now: just syntax colouring)
+* [GNU Nano](https://nano-editor.org) syntax highlighting [patterns](https://github.com/ursalang/nanorc-ursa)
 * [Emacs mode](https://github.com/ursalang/ursa-ts-mode) (available from [MELPA](https://melpa.org/#/ursa-ts-mode)); needs tree-sitter support, which is included in Emacs 29 and later
 * GEdit, the GNOME Text Editor and other programs that use GtkSourceView: [GtkSourceView patterns](https://github.com/ursalang/ursa-gtksourceview)
 
