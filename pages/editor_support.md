@@ -7,6 +7,6 @@
 
 ## Other resources
 
-* [Pygments](https://pygments.org) syntax colourer [lexer](https://github.com/rrthomas/pygments/blob/ursa/pygments/lexers/ursa.py) (currently can only be used by building this branch of Pygments—as used for the samples on this web site!)
+* [Pygments](https://pygments.org) syntax colourer [lexer](https://github.com/ursalang/pygments-lexer-ursa) (as used for the samples on this web site!)
 * Shared MIME info [XML description of Ursa files](https://github.com/ursalang/ursa-gtksourceview/blob/main/ursa.xml)
 * [Tree-sitter](https://tree-sitter.github.io/tree-sitter/) [grammar and highlighting patterns](https://github.com/ursalang/tree-sitter-ursa) for Ursa
