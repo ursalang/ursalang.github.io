@@ -29,6 +29,10 @@ result value.
 
 A reasonably full set of pages was now live, albeit many of them stubs.
 
+My good friend and programming partner Alistair Turnbull noticed Ursa in his
+GitHub feed and asked me about it; I’d not mentioned it to him, to see how
+long it would take him to find out about it!
+
 ### 19 September 2023
 
 After a crash course in [webpack](https://webpack.js.org/) I managed to get
@@ -59,7 +63,7 @@ having previously tried and failed to use the tree-sitter parser with
 Microsoft’s
 [anycode](https://marketplace.visualstudio.com/items?itemName=ms-vscode.anycode)
 extension, which I could not make work at all. To console myself I made
-[Gtksourceview patterns](https://github.com/ursalang/ursa-gtksourceview),
+[GtkSourceView patterns](https://github.com/ursalang/ursa-gtksourceview),
 for use with GEdit and other GNOME programs.
 
 ### 8 September 2023
@@ -89,7 +93,7 @@ pretty-printer to work for Ursa, so now I could have nicely formatted Ark.
 
 ### 22 August 2023
 
-A major restructing of the interpreter: rather than using `eval` methods of
+A major restructuring of the interpreter: rather than using `eval` methods of
 a class hierarchy of Ursa values, I used a single function. This was easier
 to understand and maintain, though it meant that the organization of the
 code became rather less consistent.
@@ -170,7 +174,7 @@ already existed, but, as a general-purpose programming language, only on
 [Rosetta Code](https://www.rosettacode.org/wiki/Category:Ursa) for a
 language that seemed to be an abandoned experiment. (Apologies to the author
 if this is not the case!) I figured that I could refer to my Ursa as
-“Ursalang”, using the common contemporay convention, and indeed this turned
+“Ursalang”, using the common contemporary convention, and indeed this turned
 out to be necessary in various places—the organization name was already
 taken on GitHub, for example.
 
