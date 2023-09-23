@@ -47,5 +47,16 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+            <div class="card-header">Rosetta Code</div>
+            <div class="card-body">
+                <p>Find Ursa examples on Rosetta Code and add more!</p>
+                <a class="btn btn-primary" href="https://www.rosettacode.org/wiki/Category:Ursalang">Go to Rosetta Code</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="/bundle.js"></script>
