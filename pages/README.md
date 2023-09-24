@@ -1,6 +1,6 @@
 # Ursa
 
-<div class="row">
+<div class="row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0">
         <h5>A friendly, stable, general-purpose programming-language</h5>
         Ursa helps you write code that will last a long time: a simple, general-purpose programming language that is easy to pick up and will work the same way long into the future.
@@ -48,12 +48,23 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
-            <div class="card-header">Rosetta Code</div>
-            <div class="card-body">
-                <p>Find Ursa examples on Rosetta Code and add more!</p>
-                <a class="btn btn-primary" href="https://www.rosettacode.org/wiki/Category:Ursalang">Go to Rosetta Code</a>
+    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-header">Rosetta Code</div>
+                <div class="card-body link-card">
+                    <p>Find Ursa examples on Rosetta Code and add more!</p>
+                    <div class="link-card-spacer"></div>
+                    <div><a class="btn btn-primary" href="https://www.rosettacode.org/wiki/Category:Ursalang">Go to Rosetta Code</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Discuss and learn Ursa</div>
+                <div class="card-body link-card">
+                    <p>Join us in our Matrix space! we have rooms for general discussion, newbies, and the web site.</p>
+                    <div class="link-card-spacer"></div>
+                    <div><a class="btn btn-primary" href="https://matrix.to/#/#ursalang:matrix.org">Go to Matrix</a></div>
+                </div>
             </div>
         </div>
     </div>

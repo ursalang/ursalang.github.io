@@ -92,3 +92,13 @@ pre {
 .ursa-error {
   color: red;
 }
+
+/* Cards on home page with link buttons */
+.link-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-card-spacer {
+  flex: auto;
+}
