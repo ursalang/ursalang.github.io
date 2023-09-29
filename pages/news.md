@@ -4,12 +4,16 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 29 September 2023
+
+Release 0.0.9 fixes some important bugs: variables captured by a closure that is instantiated multiple times now work correctly, and declarations can now be interleaved with expressions.
+
 ### 24 September 2023
 
 The web site now has a news page. I’ve filled in earlier news. From now on it will be in the present tense!
 
-I’ve had a the first contribution to Ursa from someone else: the author of
-[syntastica](https://github.com/RubixDev/syntastica/), a syntax-highlighting tool based on tree-sitter, is kindly helping me add Ursa to the supported languages.
+I’ve had a the first code contribution to Ursa from someone else: the author of
+[syntastica](https://github.com/RubixDev/syntastica/), a syntax-highlighting tool based on tree-sitter, is kindly helping me add Ursa to the supported languages; meanwhile, Ali Anvari helped me find a couple of important bugs, one in the interpreter and one in the grammar of Ursa.
 
 ### 23 September 2023
 
