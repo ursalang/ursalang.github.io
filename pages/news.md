@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 8 October 2023
+
+Release 0.0.10 fixes more bugs, particularly improving the implementation of (Ursa) objects. The rest of the work is under the hood, to support some more exciting changes coming soon!
+
 ### 29 September 2023
 
 Release 0.0.9 fixes some important bugs: variables captured by a closure that is instantiated multiple times now work correctly, and declarations can now be interleaved with expressions.
