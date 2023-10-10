@@ -14,7 +14,7 @@
     "node-polyfill-webpack-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "hook-shell-script-webpack-plugin": "^0.3.0",
+    "hook-shell-script-webpack-plugin": "^0.3.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",

@@ -1,2 +1,2 @@
 #!/bin/sh
-./cgi-bin/static-site --force ./cgi-bin/web.pl ./_site
+./cgi-bin/static-site --verbose --force ./cgi-bin/web.pl ./_site
