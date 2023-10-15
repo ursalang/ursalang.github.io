@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 15 October 2023
+
+Release 0.0.11 adds the ability to call methods on JavaScript objects wrapped as Ursa objects. The web version of Ursa exposes the `document` object to Ursa, and the web site's “Try Ursa!” box now demonstrates this by changing the contents of the web page. Ursa now has bitwise operations, including shifts. There are also fixes and improvements under the hood.
+
 ### 8 October 2023
 
 Release 0.0.10 fixes more bugs, particularly improving the implementation of (Ursa) objects. The rest of the work is under the hood, to support some more exciting changes coming soon!
