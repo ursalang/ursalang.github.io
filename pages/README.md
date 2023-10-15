@@ -33,7 +33,7 @@
                 <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">$paste{sum-list-return.html}</div>
                 <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">$paste{two-double-closures.html}</div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
-                    <textarea id="ursa-input" rows="6" spellcheck="false">6 * 9</textarea>
+                    <textarea id="ursa-input" rows="6" spellcheck="false">let h = document.getElementsByTagName("h1"); let i = h.item(0); i.innerHTML = "Try Ursa!"</textarea>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
                         <div class="card-body" id="ursa-result"></div>
