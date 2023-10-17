@@ -30,7 +30,6 @@ $(function () {
     $ursaOutput.text(output)
     return new Null()
   })))
-  globals.set('document', new ValRef(new NativeObj(document)))
 
   function respondToVisibility(element, callback) {
     let observer = new IntersectionObserver((entries) => {
