@@ -8,6 +8,8 @@ A summary of the main events around and about Ursa.
 
 Release 0.0.13 adds the support for DOM hacking to the Ursa itself, and adds shebang support, so that Ursa scripts can now be run directly by adding a line at the start that says something like `#!/usr/bin/env ursa`.
 
+The various editing and highlighting modes now support shebang lines, and the Pygments lexer is now a fully-fledged plugin that can be installed with `pip` like any other Python package.
+
 ### 16 October 2023
 
 Release 0.0.12 fixes some bugs in the Ursa compiler around property access. The web site uses these fixes to simplify the demo of modifying `document`.
