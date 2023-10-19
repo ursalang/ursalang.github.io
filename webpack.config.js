@@ -17,6 +17,11 @@ module.exports = {
         new HookShellScriptPlugin({ afterEmit: [`${__dirname}/update-site`] }),
         new WatchExternalFilesPlugin({ files: ['./pages/**/*', './cgi-bin/**/*'] }),
     ],
+    resolve: {
+        alias: {
+            fs: false
+        }
+    },
     stats: {
         warningsFilter: [
             './node_modules/@ursalang/ursa/lib/ark/interp.js'
