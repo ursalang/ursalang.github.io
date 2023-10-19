@@ -77,7 +77,8 @@ main {
 
 /* Highlighted buttons */
 .highlight-button {
-  background-color: var(--bs-blue);
+  color: var(--bs-btn-color);
+  background-color: var(--bs-btn-bg);
 }
 
 /* Code examples */
