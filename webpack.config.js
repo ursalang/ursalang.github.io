@@ -14,7 +14,12 @@ module.exports = {
     },
     plugins: [
         new NodePolyfillPlugin(),
-        new HookShellScriptPlugin({ afterEmit: [`${__dirname}/update-site`] }),
+        new HookShellScriptPlugin({
+            afterEmit: [{
+                command: `${__dirname}/cgi-bin/static-site`,
+                args: ['--verbose', '--force', './cgi-bin/web.pl', './_site'],
+            }],
+        }),
         new WatchExternalFilesPlugin({ files: ['./pages/**/*', './cgi-bin/**/*'] }),
     ],
     resolve: {
