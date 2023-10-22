@@ -4,7 +4,7 @@
   "description": "The Ursa programming language web demo and language site",
   "scripts": {
     "build": "webpack && ./cgi-bin/static-site --verbose --force ./cgi-bin/web.pl ./_site",
-    "serve": "node ./cgi-bin/server.js"
+    "serve": "webpack watch & node ./cgi-bin/server.js"
   },
   "author": "Reuben Thomas",
   "license": "ISC",

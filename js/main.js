@@ -3,7 +3,7 @@ import { serialize, globals, ArkState, ValRef, Null, NativeFn, NativeObj, toJs }
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 function debounce(func, timeout) {
-  let timer;
+  let timer
   return (...args) => {
     clearTimeout(timer)
     timer = setTimeout(() => func.apply(this, args), timeout)
@@ -58,4 +58,24 @@ $(function () {
   const highlightLongDebounce = debounce(evaluate, 500)
 
   respondToVisibility(document.getElementById('ursa-result'), evaluate)
+
+  const highlightWorker = new Worker("/_static/demo-worker.js")
+  highlightWorker.onmessage = (msg) => {
+    if (msg.data.loaded) {
+    } else if (msg.data.html) {
+      document.getElementById(msg.data.outputDiv).innerHTML = msg.data.html
+    } else if (msg.data.lexer) {
+    } else {
+      console.warn('unexpected message from highlight worker', msg)
+    }
+  }
+
+  async function highlight(id) {
+    const elem = document.getElementById(id)
+    highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer: 'ursa', formatter: 'html', outputDiv: id } })
+  }
+
+  highlight("functions-tab-pane")
+  highlight("lists-tab-pane")
+  highlight("closures-tab-pane")
 })
