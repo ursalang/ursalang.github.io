@@ -2,3 +2,4 @@ package-lock.json
 pages/bundle.js
 node_modules/
 _site/
+*.pyc
