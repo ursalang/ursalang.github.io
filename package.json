@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "The Ursa programming language web demo and language site",
   "scripts": {
-    "build": "webpack",
-    "serve": "webpack serve --static pages"
+    "build": "webpack && ./cgi-bin/static-site --verbose --force ./cgi-bin/web.pl ./_site",
+    "serve": "node ./cgi-bin/server.js"
   },
   "author": "Reuben Thomas",
   "license": "ISC",
@@ -14,10 +14,9 @@
     "node-polyfill-webpack-plugin": "^2.0.1"
   },
   "devDependencies": {
-    "hook-shell-script-webpack-plugin": "^0.3.1",
+    "cgi": "^0.3.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
     "webpack-watch-files-plugin": "^1.2.1"
   }
 }
