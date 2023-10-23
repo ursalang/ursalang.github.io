@@ -28,10 +28,62 @@
                 </ul>
             </div>
             <div class="card-body tab-content">
-                <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">$paste{hello-woods.html}</div>
-                <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0"><pre>$paste{fac-symbol-recursion.ursa}</pre></div>
-                <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0"><pre>$paste{sum-list-return.ursa}</pre></div>
-                <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0"><pre>$paste{two-double-closures.ursa}</pre></div>
+                <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header"><h6>Code</h6></div>
+                        <div class="card-body" id="hello-input">$paste{hello-woods.html}</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Result</h6></div>
+                        <div class="card-body" id="hello-result"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Output</h6></div>
+                        <div class="card-body" id="hello-output"></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header"><h6>Code</h6></div>
+                        <div class="card-body" id="functions-input"><pre>$paste{fac-symbol-recursion.ursa}</pre></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Result</h6></div>
+                        <div class="card-body" id="functions-result"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Output</h6></div>
+                        <div class="card-body" id="functions-output"></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header"><h6>Code</h6></div>
+                        <div class="card-body" id="lists-input"><pre>$paste{sum-list-return.ursa}</pre></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Result</h6></div>
+                        <div class="card-body" id="lists-result"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Output</h6></div>
+                        <div class="card-body" id="lists-output"></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">
+                    <div class="card">
+                        <div class="card-header"><h6>Code</h6></div>
+                        <div class="card-body" id="closures-input"><pre>$paste{two-double-closures.ursa}</pre></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Result</h6></div>
+                        <div class="card-body" id="closures-result"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header"><h6>Output</h6></div>
+                        <div class="card-body" id="closures-output"></div>
+                    </div>
+                </div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
                     <textarea id="ursa-input" rows="6" spellcheck="false">document.getElementsByTagName("h1").item(0).innerHTML = "Try Ursa!"</textarea>
                     <div class="card">

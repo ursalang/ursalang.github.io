@@ -1,5 +1,5 @@
 window.$ = require('jquery')
-import { serialize, globals, ArkState, ValRef, Null, NativeFn, NativeObj, toJs } from '@ursalang/ursa/lib/ark/interp'
+import { serialize, globals, ArkState, ValRef, Null, NativeFn, toJs } from '@ursalang/ursa/lib/ark/interp'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 function debounce(func, timeout) {
@@ -12,8 +12,6 @@ function debounce(func, timeout) {
 
 $(function () {
   const $ursaInput = $("#ursa-input")
-  const $ursaResult = $("#ursa-result")
-  const $ursaOutput = $("#ursa-output")
 
   function debouncedUpdate() {
     if ($ursaInput.text().length < 1000) {
@@ -24,12 +22,6 @@ $(function () {
   }
 
   $ursaInput.on('input', debouncedUpdate)
-
-  globals.set('print', new ValRef(new NativeFn('print', (obj) => {
-    const output = toJs(obj).toString()
-    $ursaOutput.text(output)
-    return new Null()
-  })))
 
   function respondToVisibility(element, callback) {
     let observer = new IntersectionObserver((entries) => {
@@ -43,21 +35,37 @@ $(function () {
     observer.observe(element)
   }
 
-  function evaluate() {
-    try {
-      const compiled = compile($ursaInput.val())
-      console.log(serialize(compiled[0]))
-      const val = new ArkState().run(compiled)
-      $ursaResult.text(serialize(val))
-    } catch (error) {
-      $ursaResult.html(`<span class="ursa-error">${error}</span`)
+  function evaluate(name) {
+    const $input = $(`#${name}-input`)
+    const $result = $(`#${name}-result`)
+    const $output = $(`#${name}-output`)
+
+    return function () {
+      globals.set('print', new ValRef(new NativeFn('print', (_ark, obj) => {
+        const output = toJs(obj).toString()
+        $output.text(output)
+        return Null()
+      })))
+
+      try {
+        const compiled = compile($input.text())
+        highlight($input.attr('id'), "ursa")
+        // console.log(serialize(compiled[0]))
+        const val = new ArkState().run(compiled)
+        $result.html(`<pre>${serialize(val)}</pre>`)
+        highlight($result.attr('id'), "json")
+      } catch (error) {
+        $result.html(`<span class="ursa-error">${error}</span`)
+      }
     }
   }
 
-  const highlightShortDebounce = debounce(evaluate, 50)
-  const highlightLongDebounce = debounce(evaluate, 500)
+  const evaluateUrsa = evaluate("ursa")
 
-  respondToVisibility(document.getElementById('ursa-result'), evaluate)
+  const highlightShortDebounce = debounce(evaluateUrsa, 50)
+  const highlightLongDebounce = debounce(evaluateUrsa, 500)
+
+  respondToVisibility(document.getElementById('ursa-result'), evaluateUrsa)
 
   const highlightWorker = new Worker("/_static/demo-worker.js")
   highlightWorker.onmessage = (msg) => {
@@ -70,12 +78,13 @@ $(function () {
     }
   }
 
-  async function highlight(id) {
+  async function highlight(id, lexer) {
     const elem = document.getElementById(id)
-    highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer: 'ursa', formatter: 'html', outputDiv: id } })
+    highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer, formatter: 'html', outputDiv: id } })
   }
 
-  highlight("functions-tab-pane")
-  highlight("lists-tab-pane")
-  highlight("closures-tab-pane")
+  evaluate("hello")()
+  evaluate("functions")()
+  evaluate("lists")()
+  evaluate("closures")()
 })
