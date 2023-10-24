@@ -4,6 +4,12 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 24 October 2023
+
+Release 0.0.15 improves the language in various small ways: simultaneous declarations are now possible with `let…and let…`, making it easier to write mutually recursive functions. The assignment operator has been changed to `:=`. Various under-the-hood improvements and fixes have been made.
+
+A new web page of “Ursalang tasks” has been created on [Rosetta Code](https://rosettacode.org/wiki/Tasks_not_implemented_in_Ursalang).
+
 ### 19 October 2023
 
 Release 0.0.14 adds some library facilities, and improves the `argv` interface. The design of the “standard library” is by no means final; the idea is just to make it easy to write somewhat useful Ursa programs! There's a test program `syms.ursa` in the `test` directory that lists the words in its input file.
