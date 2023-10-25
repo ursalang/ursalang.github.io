@@ -1,5 +1,7 @@
 window.$ = require('jquery')
-import { serialize, globals, ArkState, ValRef, Null, NativeFn, toJs } from '@ursalang/ursa/lib/ark/interp'
+import { globals, ArkState, ValRef, Null, NativeFn } from '@ursalang/ursa/lib/ark/interp'
+import { toJs } from '@ursalang/ursa/lib/ark/ffi'
+import { serialize } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 function debounce(func, timeout) {
