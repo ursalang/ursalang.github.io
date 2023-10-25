@@ -45,7 +45,7 @@
                 <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body" id="functions-input"><pre>$paste{fac-symbol-recursion.ursa}</pre></div>
+                        <div class="card-body" id="functions-input"><pre>$paste{fac-fn-let.ursa}</pre></div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>

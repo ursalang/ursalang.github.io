@@ -1,0 +1,3 @@
+[submodule "ursa"]
+	path = ursa
+	url = https://github.com/ursalang/ursa
