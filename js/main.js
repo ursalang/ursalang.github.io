@@ -37,8 +37,12 @@ $(function () {
     observer.observe(element)
   }
 
-  function evaluate(name) {
+  function evaluate(name, getter) {
     const $input = $(`#${name}-input`)
+    if (getter === undefined) {
+      getter = $input.text.bind($input)
+    }
+    console.log(getter)
     const $result = $(`#${name}-result`)
     const $output = $(`#${name}-output`)
 
@@ -50,7 +54,7 @@ $(function () {
       })))
 
       try {
-        const compiled = compile($input.text())
+        const compiled = compile(getter())
         // console.log(serialize(compiled[0]))
         const val = new ArkState().run(compiled)
         $result.html(`<pre>${serialize(val)}</pre>`)
@@ -61,7 +65,7 @@ $(function () {
     }
   }
 
-  const evaluateUrsa = evaluate("ursa")
+  const evaluateUrsa = evaluate("ursa", $('#ursa-input').val.bind($('#ursa-input')))
 
   const highlightShortDebounce = debounce(evaluateUrsa, 50)
   const highlightLongDebounce = debounce(evaluateUrsa, 500)
