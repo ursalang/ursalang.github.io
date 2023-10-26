@@ -8,10 +8,10 @@
     <div class="col-sm-6 mb-3 mb-sm-0">
         <div class="card">
             <div class="card-header">
-                <h5>See and Try Ursa</h5>
+                <h5>Examples and Demo</h5>
                 <ul class="nav nav-tabs card-header-tabs" id="codeTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="hello-tab" data-bs-toggle="tab" data-bs-target="#hello-tab-pane" type="button" role="tab" aria-controls="hello-tab-pane" aria-selected="true">Hello, woods!</button>
+                        <button class="nav-link active" id="hello-tab" data-bs-toggle="tab" data-bs-target="#hello-tab-pane" type="button" role="tab" aria-controls="hello-tab-pane" aria-selected="true">Hello</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="functions-tab" data-bs-toggle="tab" data-bs-target="#functions-tab-pane" type="button" role="tab" aria-controls="functions-tab-pane" aria-selected="false">Functions</button>
@@ -23,7 +23,7 @@
                         <button class="nav-link" id="closures-tab" data-bs-toggle="tab" data-bs-target="#closures-tab-pane" type="button" role="tab" aria-controls="closures-tab-pane" aria-selected="false">Closures</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link btn btn-primary highlight-button" id="try-tab" data-bs-toggle="tab" data-bs-target="#try-tab-pane" type="button" role="tab" aria-controls="try-tab-pane" aria-selected="false">Try Ursa!</button>
+                        <button class="nav-link btn btn-primary highlight-button" id="try-tab" data-bs-toggle="tab" data-bs-target="#try-tab-pane" type="button" role="tab" aria-controls="try-tab-pane" aria-selected="false">Live Demo</button>
                     </li>
                 </ul>
             </div>
