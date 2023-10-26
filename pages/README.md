@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">
-                    <textarea id="ursa-input" rows="6" spellcheck="false">document.getElementsByTagName("h1").item(0).innerHTML = "Try Ursa!"</textarea>
+                    <textarea id="ursa-input" rows="6" spellcheck="false">document.getElementsByTagName("h1").item(0).innerHTML := "Try Ursa!"</textarea>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
                         <div class="card-body" id="ursa-result"></div>
