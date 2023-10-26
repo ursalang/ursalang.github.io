@@ -51,7 +51,6 @@ $(function () {
 
       try {
         const compiled = compile($input.text())
-        highlight($input.attr('id'), "ursa")
         // console.log(serialize(compiled[0]))
         const val = new ArkState().run(compiled)
         $result.html(`<pre>${serialize(val)}</pre>`)
@@ -86,7 +85,11 @@ $(function () {
   }
 
   evaluate("hello")()
+  highlight($('#hello-input').attr('id'), "ursa")
   evaluate("functions")()
+  highlight($('#functions-input').attr('id'), "ursa")
   evaluate("lists")()
+  highlight($('#lists-input').attr('id'), "ursa")
   evaluate("closures")()
+  highlight($('#closures-input').attr('id'), "ursa")
 })
