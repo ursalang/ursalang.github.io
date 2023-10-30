@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 30 October 2023
+
+An initial bare-bones version of the [language reference](reference.md) is up.
+
 ### 24 October 2023
 
 Release 0.0.15 improves the language in various small ways: simultaneous declarations are now possible with `let…and let…`, making it easier to write mutually recursive functions. The assignment operator has been changed to `:=`. Various under-the-hood improvements and fixes have been made.

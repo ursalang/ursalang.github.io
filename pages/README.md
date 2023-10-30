@@ -27,7 +27,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-body tab-content">
+            <div class="card-body tab-content code-examples">
                 <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
