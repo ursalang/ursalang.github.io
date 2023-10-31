@@ -138,7 +138,7 @@ let s = "hello"
 let l = [1, 2, 3]
 ```
 
-The value of a declaration expression is `null`. The scope of the identifier includes the initializer; this makes it easy to define recursive functions. On the other hand, the following is not allowed:
+The value of a declaration expression is the value of its right-hand side. The scope of the identifier includes the initializer; this makes it easy to define recursive functions. On the other hand, the following is not allowed:
 
 ```
 let x = 1     // x is 1
