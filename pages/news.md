@@ -4,6 +4,19 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 31 October 2023
+
+Release 0.0.16 allows `let` bindings to persist in the REPL, which makes the REPL reasonably usable for the first time. It is possible to have sessions like the following:
+
+```ursa
+Welcome to Ursa 0.0.16.
+> let a = 3
+3
+> a + 4
+7
+> 
+```
+
 ### 30 October 2023
 
 An initial bare-bones version of the [language reference](reference.md) is up.
