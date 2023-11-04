@@ -1,7 +1,7 @@
 window.$ = require('jquery')
 import { globals, ArkState, ValRef, Null, NativeFn } from '@ursalang/ursa/lib/ark/interp'
 import { toJs } from '@ursalang/ursa/lib/ark/ffi'
-import { serialize } from '@ursalang/ursa/lib/ark/serialize'
+import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 function debounce(func, timeout) {
@@ -42,12 +42,11 @@ $(function () {
     if (getter === undefined) {
       getter = $input.text.bind($input)
     }
-    console.log(getter)
     const $result = $(`#${name}-result`)
     const $output = $(`#${name}-output`)
 
     return function () {
-      globals.set('print', new ValRef(new NativeFn('print', (_ark, obj) => {
+      globals.set('print', new ValRef(new NativeFn((_ark, obj) => {
         const output = toJs(obj).toString()
         $output.text(output)
         return Null()
@@ -55,9 +54,9 @@ $(function () {
 
       try {
         const compiled = compile(getter())
-        // console.log(serialize(compiled[0]))
+        // console.log(serializeVal(compiled[0]))
         const val = new ArkState().run(compiled)
-        $result.html(`<pre>${serialize(val)}</pre>`)
+        $result.html(`<pre>${serializeVal(val)}</pre>`)
         highlight($result.attr('id'), "json")
       } catch (error) {
         $result.html(`<span class="ursa-error">${error}</span`)
