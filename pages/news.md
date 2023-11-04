@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 4 November 2023
+
+Release 0.0.17 improves both compile- and run-time error messages. At compile-time, undefined symbols give an error with a source location; meanwhile, run-time errors now show a stack backtrace.
+
 ### 31 October 2023
 
 Release 0.0.16 allows `let` bindings to persist in the REPL, which makes the REPL reasonably usable for the first time. It is possible to have sessions like the following:
