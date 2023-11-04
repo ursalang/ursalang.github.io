@@ -3,6 +3,7 @@ import { globals, ArkState, ValRef, Null, NativeFn } from '@ursalang/ursa/lib/ar
 import { toJs } from '@ursalang/ursa/lib/ark/ffi'
 import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
+import { Octokit } from 'octokit'
 
 function debounce(func, timeout) {
   let timer
@@ -12,7 +13,7 @@ function debounce(func, timeout) {
   }
 }
 
-$(function () {
+$(async function () {
   const $ursaInput = $("#ursa-input")
 
   function debouncedUpdate() {
@@ -95,4 +96,20 @@ $(function () {
   highlight($('#lists-input').attr('id'), "ursa")
   evaluate("closures")()
   highlight($('#closures-input').attr('id'), "ursa")
+
+  // Get latest release data from GitHub
+  const octokit = new Octokit()
+  const latestRelease = await octokit.request('GET /repos/{owner}/{repo}/releases/latest', {
+    owner: 'ursalang',
+    repo: 'ursa',
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+  })
+  console.log(latestRelease)
+  $('#ursa-latest-release-version').text(latestRelease.data.tag_name)
+  const date = new Date(Date.parse(latestRelease.data.created_at))
+  console.log(date)
+  $('#ursa-latest-release-date').text(date.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }))
+  $('#ursa-latest-release-notes').text(latestRelease.data.body)
 })

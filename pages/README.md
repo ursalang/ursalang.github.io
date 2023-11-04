@@ -120,6 +120,18 @@
             </div>
         </div>
     </div>
+    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-header">Latest release: <span id="ursa-latest-release-version">vx.y.z</span> (<span id="ursa-latest-release-date">Date</span>)</div>
+                <div class="card-body link-card">
+                    <p id="ursa-latest-release-notes">Latest release notes.</p>
+                    <div class="link-card-spacer"></div>
+                    <div><a class="btn btn-primary" id="ursa-latest-release-url" src="https://github.com/ursalang/ursa/releases/latest">Get latest release</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="hlcode"></div>

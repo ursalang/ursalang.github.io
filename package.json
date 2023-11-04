@@ -11,7 +11,8 @@
   "dependencies": {
     "@ursalang/ursa": "*",
     "jquery": "^3.7.0",
-    "node-polyfill-webpack-plugin": "^2.0.1"
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "octokit": "^3.1.1"
   },
   "devDependencies": {
     "cgi": "^0.3.1",
