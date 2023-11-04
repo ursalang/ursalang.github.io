@@ -6,7 +6,9 @@ A summary of the main events around and about Ursa.
 
 ### 4 November 2023
 
-Release 0.0.17 improves both compile- and run-time error messages. At compile-time, undefined symbols give an error with a source location; meanwhile, run-time errors now show a stack backtrace.
+Release 0.1 reached! This is really just release 0.0.17, made just before, which improves both compile- and run-time error messages. At compile-time, undefined symbols give an error with a source location; meanwhile, run-time errors now show a stack backtrace.
+
+A couple more Rosetta Code tasks have been completed, and the web site’s home page now shows the latest release and its release notes.
 
 ### 31 October 2023
 
