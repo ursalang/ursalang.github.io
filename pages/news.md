@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 9 November 2023
+
+Release 0.1.1 splits the code base into 3 packages: Ark, the Ohm grammar, and the Ursa compiler/REPL. There’s some minor bug fixes and tidying up, too.
+
 ### 4 November 2023
 
 Release 0.1 reached! This is really just release 0.0.17, made just before, which improves both compile- and run-time error messages. At compile-time, undefined symbols give an error with a source location; meanwhile, run-time errors now show a stack backtrace.
@@ -188,8 +192,9 @@ A red-letter day for Ursa visibility and usability!
 ### 12 August 2023
 
 My first foray into [Langium](https://langium.org/). I wanted to implement
-Ursa with this more sophisticated language building system, which would give me rather more than Ohm, in particular an implementation of web workers, and an
-[LSP](https://microsoft.github.io/language-server-protocol) server.
+Ursa with this more sophisticated language building system, which would give
+me rather more than Ohm, in particular an implementation of web workers, and
+an [LSP](https://microsoft.github.io/language-server-protocol) server.
 
 However, seeing its complexity I decided to wait until Ursa was a bit more
 stable.
