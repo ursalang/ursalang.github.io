@@ -86,12 +86,6 @@ main {
   margin-bottom: 0;
 }
 
-#hlcode pre {
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-}
-
 #ursa-input {
   width: 100%;
 }

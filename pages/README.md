@@ -134,6 +134,4 @@
     </div>
 </div>
 
-<div id="hlcode"></div>
-
 <script src="/bundle.js"></script>
