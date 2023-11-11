@@ -134,4 +134,4 @@
     </div>
 </div>
 
-<script src="/bundle.js"></script>
+<script src="/readme.bundle.js"></script>
