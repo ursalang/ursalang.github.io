@@ -4,7 +4,11 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
-### 9 November 2023
+### 11 November 2023
+
+A quick series of releases ending in 0.1.5 improves the code quality in preparation for development towards 0.2. There are some documentation fixes too.
+
+### 8 November 2023
 
 Release 0.1.1 splits the code base into 3 packages: Ark, the Ohm grammar, and the Ursa compiler/REPL. There’s some minor bug fixes and tidying up, too.
 
