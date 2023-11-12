@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 12 November 2023
+
+The [tutorial](tutorial) is underway!
+
 ### 11 November 2023
 
 A quick series of releases ending in 0.1.5 improves the code quality in preparation for development towards 0.2. There are some documentation fixes too.
