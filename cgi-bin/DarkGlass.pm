@@ -183,6 +183,7 @@ sub convert {
       $path = $1;
       my $fragment = $2;
       $path = $Macros{canonicalpath}($path); # follow symlinks
+      my $is_dir = -d $path;
 
       # Rewrite file extension to `.html` if in static mode and file would
       # be converted to HTML by default.
@@ -201,6 +202,7 @@ sub convert {
       my $dir = $BaseUrl . $Macros{file}();
       $dir = dirname($dir) unless -d pageToFile($Macros{page}());
       $path = abs2rel($path, $dir); # Make path relative to page
+      $path .= "/" if $is_dir; # Make path a directory if original is
       $path .= "#$fragment" if $fragment;
       $path .= "?$param" if $param;
       return $path;
@@ -261,7 +263,7 @@ sub convert {
     include => sub {
       my ($file) = @_;
       $file = $Macros{canonicalpath}($file);
-      return expand(scalar(slurp($file, {binmode => ':utf8'})));
+      return expand(scalar(slurp($file, {binmode => ':utf8'})), \%Macros);
     },
 
     paste => sub {
@@ -772,7 +774,7 @@ sub doRequest {
       if ($desttype eq "text/html") {
         my $body = getBody($text);
         $body = rewriteLinks($body) unless IS_CGI;
-        $body = expand($body, \%DarkGlass::Macros) if $srctype eq "text/plain" || $srctype eq "text/x-readme" || $srctype eq "text/markdown"; # FIXME: this is a hack
+        $body = expand($body, \%Macros) if $srctype eq "text/plain" || $srctype eq "text/x-readme" || $srctype eq "text/markdown"; # FIXME: this is a hack
         $text = expand(expandNumericEntities(scalar(slurp(untaint(abs_path("view.html")), {binmode => ':utf8'}))), \%Macros);
         $text =~ s/\$text/$body/ge; # Avoid expanding macros in body
         $text = encode_utf8($text); # Re-encode for output
