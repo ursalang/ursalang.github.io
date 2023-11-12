@@ -1,4 +1,4 @@
-## Getting started
+## Step 1: Getting started
 
 Like any skill, programming is something best learnt by doing it, so this tutorial includes lots of programming challenges. Each one is presented in a “challenge” widget, which contains the following elements:
 
