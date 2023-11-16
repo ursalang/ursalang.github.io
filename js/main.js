@@ -1,8 +1,6 @@
 window.$ = require('jquery')
-import { globals, ArkState, ValRef, Null, NativeFn } from '@ursalang/ursa/lib/ark/interp'
-import { toJs } from '@ursalang/ursa/lib/ark/ffi'
-import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
-import { compile } from '@ursalang/ursa/lib/ursa/compiler'
+import { globals, ArkState, ArkValRef, ArkNull, NativeFn, toJs, serializeVal } from '@ursalang/ark'
+import { compile } from '@ursalang/ursa'
 
 export function debounce(func, timeout) {
   let timer
@@ -37,10 +35,10 @@ export function evaluate(name, getter) {
   const $output = $(`#${name}-output`)
 
   return function () {
-    globals.set('print', new ValRef(new NativeFn((_ark, obj) => {
+    globals.set('print', new ArkValRef(new NativeFn((_ark, obj) => {
       const output = toJs(obj).toString()
       $output.text(output)
-      return Null()
+      return ArkNull()
     })))
 
     try {
