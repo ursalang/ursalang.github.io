@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 16 November 2023
+
+Release 0.1.6 adds long comments, long and literal strings, and bug fixes for bugs that unfortunately crept into the last few releases owing to problems with the tests not being run correctly. The tests have been improved to try to avoid this happening again!
+
 ### 13 November 2023
 
 Ursa has long comments. Note: there’s no new release of Ursa itself, just of the Ohm grammar. The easiest way tgo update is to uninstall and reinstall Ursa. All of the editing modes have also been updated, and the VS Code extension has been [published](https://marketplace.visualstudio.com/items?itemName=ursalang.ursa-vscode) in the Visual Studio Marketplace!
