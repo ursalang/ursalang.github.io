@@ -35,7 +35,7 @@ export function evaluate(name, getter) {
   const $output = $(`#${name}-output`)
 
   return function () {
-    globals.set('print', new ArkValRef(new NativeFn((_ark, obj) => {
+    globals.set('print', new ArkValRef(new NativeFn((obj) => {
       const output = toJs(obj).toString()
       $output.text(output)
       return ArkNull()
