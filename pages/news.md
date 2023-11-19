@@ -8,7 +8,7 @@ A summary of the main events around and about Ursa.
 
 Release 0.1.6 adds long comments, long and literal strings, and bug fixes for bugs that unfortunately crept into the last few releases owing to problems with the tests not being run correctly. The tests have been improved to try to avoid this happening again!
 
-From now on I will not write news items here for minor releases, as the latest release is automatically displayed on the home page.
+From now on I will not write news items here for minor releases, as the latest release and its release notes are automatically displayed on the home page.
 
 ### 13 November 2023
 
