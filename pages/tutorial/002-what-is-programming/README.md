@@ -33,9 +33,9 @@ With Ursa, this will not be necessary. Also, the language will not become more c
 
 The disadvantage is that Ursa will not evolve to cope with programs and computers of the future. That’s OK; there will of course be new languages for that!
 
-For more information on this, see the [rationale](../../rationale.html).
+For more information on this, see the [rationale](../../rationale.md).
 
 
 ## Let's learn Ursa!
 
-[Next step](../003-something-fun)
+[Next step](../003-something-fun/)

@@ -16,7 +16,7 @@ Ursa has long comments. Note: there’s no new release of Ursa itself, just of t
 
 ### 12 November 2023
 
-The [tutorial](tutorial) is underway!
+The [tutorial](tutorial/) is underway!
 
 ### 11 November 2023
 
@@ -221,7 +221,7 @@ stable.
 
 The first of a series of early support for editing and syntax highlighting
 Ursa source code: I started work on my second parser, using the excellent
-[tree-sitter](tree-sitter.github.io/). This helped me better understand my
+[tree-sitter](https://tree-sitter.github.io/). This helped me better understand my
 original parser (which wasn’t in great shape).
 
 ### 8 August 2023
