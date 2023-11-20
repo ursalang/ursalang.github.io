@@ -12,7 +12,8 @@ for (const v of ['PATH', 'IFS', 'CDPATH', 'ENV', 'BASH_ENV']) {
 var script = path.resolve(__dirname, 'web.pl')
 process.chdir(path.dirname(script))
 var server = http.createServer(cgi(script, { stderr: process.stderr }))
+const portArg = process.argv[2] ?? "0"
 server.listen(
-    0,
-    (x) => console.log(`Connect to server at: http://localhost:${server.address().port}`)
+    parseInt(portArg),
+    () => console.log(`Connect to server at: http://localhost:${server.address().port}`)
 )

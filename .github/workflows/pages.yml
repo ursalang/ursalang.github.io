@@ -20,6 +20,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  TEST_PORT: 8000
+
 jobs:
   # Build job
   build:
@@ -34,12 +37,15 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install DarkGlass dependencies
         run: |
-          sudo apt-get -y install discount libcgi-pm-perl libfile-slurp-perl libfile-mimeinfo-perl libimage-exiftool-perl libdatetime-perl libhtml-parser-perl libhtml-tiny-perl libxml-libxslt-perl libpdf-api2-perl libperl6-slurp-perl libxml-atom-perl libmodule-path-perl python3-xdg imagemagick rsync
+          sudo apt-get -y install discount libcgi-pm-perl libfile-slurp-perl libfile-mimeinfo-perl libimage-exiftool-perl libdatetime-perl libhtml-parser-perl libhtml-tiny-perl libxml-libxslt-perl libpdf-api2-perl libperl6-slurp-perl libxml-atom-perl libmodule-path-perl python3-xdg imagemagick rsync linkchecker
           npm install
       - name: Build pages
         run: |
           /usr/share/rsync/scripts/git-set-file-times pages
           npm run build
+      - name: Check links
+        run: |
+          node ./cgi-bin/server.js $TEST_PORT & linkchecker http://localhost:$TEST_PORT
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
