@@ -1,11 +1,31 @@
 # Ursa
 
 <div class="row mb-3">
-    <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="col-sm-12 mb-3 mb-sm-0">
         <h5>A friendly, stable, general-purpose programming-language</h5>
         Ursa helps you write code that will last a long time: a simple, general-purpose programming language that is easy to pick up and will work the same way long into the future.
     </div>
-    <div class="col-sm-6 mb-3 mb-sm-0">
+</div>
+<div class="row mb-3">
+    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
+        <div class="card">
+            <div class="card-header">Latest release: <span id="ursa-latest-release-version">vx.y.z</span> (<span id="ursa-latest-release-date">Date</span>)</div>
+            <div class="card-body link-card">
+                <p id="ursa-latest-release-notes">Latest release notes.</p>
+                <div class="link-card-spacer"></div>
+                <div><a class="btn btn-primary" id="ursa-latest-release-url" src="https://github.com/ursalang/ursa/releases/latest">Get latest release</a></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">Latest news (<span id="ursa-latest-news-date">$include{latest-news-date.md}</span>)</div>
+            <div class="card-body link-card">
+                <p id="ursa-latest-news">$include{latest-news.md}</p>
+                <div class="link-card-spacer"></div>
+                <div><a class="btn btn-primary" id="ursa-latest-release-url" src="news.md">More news</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
         <div class="card">
             <div class="card-header">
                 <h5>Examples and Demo</h5>
@@ -99,7 +119,7 @@
         </div>
     </div>
 </div>
-<div class="row">
+<div class="row mb-3">
     <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
         <div class="card-group">
             <div class="card">
@@ -116,18 +136,6 @@
                     <p>Join us in our Matrix space! we have rooms for general discussion, newbies, and the web site.</p>
                     <div class="link-card-spacer"></div>
                     <div><a class="btn btn-primary" href="https://matrix.to/#/#ursalang:matrix.org">Go to Matrix</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
-        <div class="card-group">
-            <div class="card">
-                <div class="card-header">Latest release: <span id="ursa-latest-release-version">vx.y.z</span> (<span id="ursa-latest-release-date">Date</span>)</div>
-                <div class="card-body link-card">
-                    <p id="ursa-latest-release-notes">Latest release notes.</p>
-                    <div class="link-card-spacer"></div>
-                    <div><a class="btn btn-primary" id="ursa-latest-release-url" src="https://github.com/ursalang/ursa/releases/latest">Get latest release</a></div>
                 </div>
             </div>
         </div>
