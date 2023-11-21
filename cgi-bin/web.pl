@@ -29,6 +29,11 @@ $DarkGlass::Title = "The Ursa programming language";
 $DarkGlass::Author = "Reuben Thomas";
 $DarkGlass::Email = "rrt\@sc3d.org";
 
+# Custom macro
+$DarkGlass::Macros{githubedit} = sub {
+  my ($page) = @_;
+  return "https://github.com/ursalang/ursalang.github.io/edit/main/pages/$page";
+};
 
 # Perform the request
 # Command-line arguments are supplied when we run in static mode
