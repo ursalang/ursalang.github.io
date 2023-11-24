@@ -326,3 +326,7 @@ that simply working out of my head and not worrying too much about whether I
 had the best possible result was more likely to lead to progress. Ohm turned
 out to be fun, my recent acquaintance with [TypeScript](https://www.typescriptlang.org/)
 made it even more fun, and off I went!
+
+### 10 June 2023
+
+I first installed Ohm to work on Ursa.
