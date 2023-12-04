@@ -20,10 +20,5 @@ module.exports = {
         alias: {
             fs: false
         }
-    },
-    stats: {
-        warningsFilter: [
-            './node_modules/@ursalang/ursa/lib/ark/interp.js'
-        ]
     }
 }

@@ -1,6 +1,8 @@
 window.$ = require('jquery')
-import { globals, ArkState, ArkValRef, ArkNull, NativeFn, toJs, serializeVal } from '@ursalang/ark'
-import { compile } from '@ursalang/ursa'
+import { globals, ArkState, ArkValRef, ArkNull, NativeFn } from '@ursalang/ursa/lib/ark/interpreter'
+import { toJs } from '@ursalang/ursa/lib/ark/ffi'
+import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
+import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
 export function debounce(func, timeout) {
   let timer
