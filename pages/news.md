@@ -4,6 +4,16 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 11 December 2023
+
+Release 0.2.0 is out! It comes with the start of a prelude/standard library, iterators and `for` loops, more math functions, simple file system access, and internal bug fixes. There are more test programs, and `use js`, which was broken since 0.0.9, works again, so you can access many JavaScript facilities directly.
+
+Looking forward, I have tagged several issues in GitHub with the [0.3 milestone](https://github.com/ursalang/ursa/milestone/1).
+
+I will shortly be updating the documentation to conform to the 0.2 release (apologies for not doing it before this announcement!), and adding to the tutorial, before I get down to work on version 0.3.
+
+A big thanks to those who have tested Ursa, and made suggestions and requests, especially Alistair Turnbull and Martin Keegan.
+
 ### 16 November 2023
 
 Release 0.1.6 adds long comments, long and literal strings, and bug fixes for bugs that unfortunately crept into the last few releases owing to problems with the tests not being run correctly. The tests have been improved to try to avoid this happening again!
