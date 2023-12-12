@@ -36,7 +36,7 @@ export function evaluate(name, getter) {
   const $result = $(`#${name}-result`)
   const $output = $(`#${name}-output`)
 
-  return function () {
+  return async function () {
     globals.set('print', new ArkValRef(new NativeFn((obj) => {
       const output = toJs(obj).toString()
       $output.text(output)
@@ -46,7 +46,7 @@ export function evaluate(name, getter) {
     try {
       const compiled = compile(getter())
       // console.log(serializeVal(compiled[0]))
-      const val = new ArkState().run(compiled)
+      const val = await new ArkState().run(compiled)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
       highlight($result.attr('id'), "json")
     } catch (error) {
