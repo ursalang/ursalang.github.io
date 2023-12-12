@@ -1,11 +1,9 @@
 # Ursa language reference
 
-*Under construction.*
-
-For now, see also:
+See also:
 
 * The [grammar](https://github.com/ursalang/ursa/blob/main/src/ursa/ursa.ohm) (made for [Ohm](https://ohmjs.org/))
-* The [abstract syntax and interpreter](https://github.com/ursalang/ursa/blob/main/src/ark/interp.ts)
+* The [standard library][stdlib.md]
 * The [test samples](https://github.com/ursalang/ursa/tree/main/test)
 * The [Rosetta Code examples](https://rosettacode.org/wiki/Category:Ursalang)
 
@@ -55,7 +53,7 @@ The following data types are built in:
 * Function: functions are first-class. See the next section for more details.
 
 
-### Number syntax
+### Numbers
 
 For now, only decimal numbers are permitted, with an optional decimal point and fractional part (no exponent notation). Later, hexadecimal and binary will also be supported, as well as exponent notation.
 
@@ -65,7 +63,7 @@ For now, only decimal numbers are permitted, with an optional decimal point and 
 -1
 ```
 
-### String syntax
+### Strings
 
 For now, the same as JavaScripts, but must be delimited with double quotes. JavaScript-style escapes are permitted.
 
@@ -75,7 +73,7 @@ For now, the same as JavaScripts, but must be delimited with double quotes. Java
 "\u2028"
 ```
 
-### List syntax
+<h3 id="lists">Lists</h3>
 
 List literals are written between square brackets, with list items separated by commas:
 
@@ -91,7 +89,13 @@ Lists may be indexed (indices start at 0) and their length taken:
 [1, 2].length // also 2
 ```
 
-### Maps
+Lists have an iterator method `iter` (see [Iterators](#iterators)) that returns the list elements in order:
+
+```
+for e in [1, 2, 3].iter() { print(e) }
+```
+
+<h3 id="maps">Maps</h3>
 
 Map literals are written between braces, with the key and value separated by a colon, and key–value pairs separated by commas:
 
@@ -100,12 +104,14 @@ Map literals are written between braces, with the key and value separated by a c
 {1: "a", 2: "hello", [1, 2, 3]: false}
 ```
 
+Maps have an iterator method `iter` (see [Iterators](#iterators)) that returns each key–value pair as a list of two elements, in insertion order.
+
 ### Objects
 
-Object literals are written between braces in the same way as maps. The keys must be identifiers, which are treated as literal symbols, and the values may be of any type:
+Object literals are written between braces, with a property name and value separated by an equals sign:
 
 ```
-{a: 1, b: [1, 2, 3], c: false}
+{a = 1, b = [1, 2, 3], c = false}
 ```
 
 
@@ -225,7 +231,7 @@ For now, values are considered to be true or false as they would be in JavaScrip
 
 ### Loops
 
-A loop is written with the `loop` operator followed by a block:
+A general loop is written with the `loop` operator followed by a block:
 
 ```
 loop {} // loop forever
@@ -239,6 +245,14 @@ loop { break 4 } // value: 4
 
 The `continue` expression jumps back to the top of a loop.
 
+There is a special form of loop for use with an iterator function, `for`:
+
+```
+for i of range(5) { print (i) }
+```
+
+See [Iterators](#iterators).
+
 ### Functions
 
 Functions are first-class in Ursa. A function is written using the `fn` keyword, followed by its formal parameters in parentheses, followed by its body as a block. The value of a function is the value of the last expression evaluated before it returns, or the value given with `return`, if any, or `null`. Functions are called by adding parentheses containing zero or more arguments to a function value
@@ -248,6 +262,10 @@ let f = fn(x) { x + 1 }
 f(1) // value: 2
 ```
 
+<h3 id="iterators">Iterators</h3>
+
+An iterator is just a function, but to be useful it should return a different value each time it is called, and then `null` when there are no more values. [Lists](#lists) and [maps](#maps) provide an `iter()` method that iterates over the elements of the list or map.
+
 ### `use`
 
-*To be written.*
+The `use` expression imports definitions from outside the current module. The expression `use x.y.z` is equivalent to `let z = x.use("y.z")`.
