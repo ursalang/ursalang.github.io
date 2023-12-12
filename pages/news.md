@@ -4,6 +4,12 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 12 December 2023
+
+The [language reference](reference.md) is now complete (although still rather terse), and the [standard library](stdlib.md) and [JavaScript bindings](jsbindings.md) both have reference pages too.
+
+The web site has been fixed to work correctly with the latest Ursa release.
+
 ### 11 December 2023
 
 Release 0.2.0 is out! It comes with the start of a prelude/standard library, iterators and `for` loops, more math functions, simple file system access, and internal bug fixes. There are more test programs, and `use js`, which was broken since 0.0.9, works again, so you can access many JavaScript facilities directly.
