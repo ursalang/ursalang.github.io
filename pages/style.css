@@ -103,8 +103,3 @@ main {
 .link-card-spacer {
   flex: auto;
 }
-
-/* Release notes */
-#ursa-latest-release-notes {
-  white-space: pre-line;
-}

@@ -662,10 +662,11 @@ my %link_attr;
 }
 
 # Wrap a link target in a call to $url unless it is already a macro call or
-# starts with a URI scheme.
+# starts with a URI scheme. Expand it at once, as by this point expand() has
+# already run.
 sub rewriteLink {
   my ($val, $attr, $tag) = @_;
-  $val = "\$url{$val}" unless $val =~ m/^(?:\$|[a-z]+:)/;
+  $val = expand("\$url{$val}", \%Macros) unless $val =~ m/^(?:\$|[a-z]+:)/;
   return $val;
 }
 
@@ -681,7 +682,6 @@ sub rewriteLinks {
       my ($tagname, $pos, $text) = @_;
       if (my $link_attr = $link_attr{$tagname}) {
         while (4 <= @$pos) {
-
           # use attribute sets from right to left to avoid invalidating the
           # offsets when replacing the values
           my ($k_offset, $k_len, $v_offset, $v_len) = splice(@$pos, -4);
@@ -773,8 +773,8 @@ sub doRequest {
       # FIXME: This next block should be turned into a custom Convert rule
       if ($desttype eq "text/html") {
         my $body = getBody($text);
-        $body = rewriteLinks($body) unless IS_CGI;
         $body = expand($body, \%Macros) if $srctype eq "text/plain" || $srctype eq "text/x-readme" || $srctype eq "text/markdown"; # FIXME: this is a hack
+        $body = rewriteLinks($body) unless IS_CGI;
         $text = expand(expandNumericEntities(scalar(slurp(untaint(abs_path("view.html")), {binmode => ':utf8'}))), \%Macros);
         $text =~ s/\$text/$body/ge; # Avoid expanding macros in body
         $text = encode_utf8($text); # Re-encode for output
