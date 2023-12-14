@@ -1,5 +1,5 @@
 import { Octokit } from 'octokit'
-import { debouncedUpdate, evaluate, evaluateUrsa, highlight, respondToVisibility } from './main.js'
+import { debouncedUpdate, evaluate, evaluateUrsa, respondToVisibility } from './main.js'
 $(async function () {
     const $ursaInput = $("#ursa-input")
 
@@ -8,13 +8,9 @@ $(async function () {
     respondToVisibility(document.getElementById('ursa-result'), evaluateUrsa)
 
     evaluate("hello")()
-    highlight($('#hello-input').attr('id'), "ursa")
     evaluate("functions")()
-    highlight($('#functions-input').attr('id'), "ursa")
     evaluate("lists")()
-    highlight($('#lists-input').attr('id'), "ursa")
     evaluate("closures")()
-    highlight($('#closures-input').attr('id'), "ursa")
 
     // Get latest release data from GitHub
     const octokit = new Octokit()

@@ -23,10 +23,19 @@ highlightWorker.onmessage = (msg) => {
   }
 }
 
-export async function highlight(id, lexer) {
+export async function highlightElement(id, lexer) {
   const elem = document.getElementById(id)
+  console.log(`id: ${id}`)
   highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer, formatter: 'html', outputDiv: id } })
 }
+
+export async function highlightClass(klass) {
+  const elems = document.getElementsByClassName(klass)
+  for (const elem of elems) {
+    highlightElement(elem.getAttribute('id'), 'ursa')
+  }
+}
+highlightClass('ursa-code')
 
 export function evaluate(name, getter) {
   const $input = $(`#${name}-input`)
@@ -48,7 +57,7 @@ export function evaluate(name, getter) {
       // console.log(serializeVal(compiled[0]))
       const val = await new ArkState().run(compiled)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
-      highlight($result.attr('id'), "json")
+      highlightElement($result.attr('id'), "json")
     } catch (error) {
       $result.html(`<span class="ursa-error">${error}</span`)
     }
