@@ -16,4 +16,4 @@ $include{../tutorial-step.html}
 
 <script src="/tutorial.bundle.js"></script>
 
-[Next step](../002-what-is-programming/)
+[Next step: What is programming?](../002-what-is-programming/)
