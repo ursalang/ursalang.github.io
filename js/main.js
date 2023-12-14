@@ -29,14 +29,6 @@ export async function highlightElement(id, lexer) {
   highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer, formatter: 'html', outputDiv: id } })
 }
 
-export async function highlightClass(klass) {
-  const elems = document.getElementsByClassName(klass)
-  for (const elem of elems) {
-    highlightElement(elem.getAttribute('id'), 'ursa')
-  }
-}
-highlightClass('ursa-code')
-
 export function evaluate(name, getter) {
   const $input = $(`#${name}-input`)
   if (getter === undefined) {
