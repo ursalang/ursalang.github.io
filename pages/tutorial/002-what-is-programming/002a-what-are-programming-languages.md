@@ -1,4 +1,4 @@
-# What are programming languages?
+# Step 2a: What are programming languages?
 
 A programming language, therefore, has two main audiences: human and machine. It must be *comprehensible* to humans: that is to say, human readers must be able without too much trouble to work out what the program is intended to do. It must be *tractable* for machines: that is, computers must be able to convert the program into instructions to perform.
 

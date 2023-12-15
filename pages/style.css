@@ -85,8 +85,15 @@ main {
   content: "Next step: ";
 }
 
+/* Note link/buttons */
+.note-button {
+  border: 0px;
+  background-color: var(--bs-btn-bg);
+  border-radius: 4px;
+}
+
 /* Code examples */
-.highlight:not(.card-body .highlight) {
+div.highlight:not(.card-body .highlight) {
   display: table;
 }
 

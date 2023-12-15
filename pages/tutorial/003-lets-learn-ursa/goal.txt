@@ -1,0 +1,1 @@
+Try to make the program to display only five numbers.

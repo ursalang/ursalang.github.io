@@ -7,7 +7,7 @@ let collatz = fn(n) {
   }
 }
 
-for i of range(1000000) {
+for i of range(10) {
   let n = i + 2
   print(collatz(n))
 }

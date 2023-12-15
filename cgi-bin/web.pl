@@ -9,6 +9,9 @@ use utf8;
 use strict;
 use warnings;
 
+use File::Temp;
+
+use File::Slurp qw(slurp);
 use CGI qw(:standard);
 
 use lib ".";
@@ -41,6 +44,23 @@ $DarkGlass::Macros{githubedit} = sub {
 $DarkGlass::Macros{nextstep} = sub {
   my ($page, $text) = @_;
   return "<a class=\"btn btn-primary\" href=\"$page\"><span class=\"next-step\">$text</span></a>";
+};
+my $note_number = 0;
+$DarkGlass::Macros{note} = sub {
+  my ($linkText, $noteText) = @_;
+  my $linkId = "note$note_number";
+  $note_number++;
+  return "<button class=\"note-button btn-secondary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#$linkId\" aria-expanded=\"false\" aria-controls=\"$linkId\">$linkText</button><span class=\"collapse\" id=\"$linkId\"><span class=\"card card-body\">$noteText</span></span>";
+};
+$DarkGlass::Macros{ursa} = sub {
+  my ($code) = @_;
+  my $tmpfile = File::Temp->new();
+  print $tmpfile $code;
+  open(READER, "-|", "pygmentize", "-l", "ursa", $tmpfile, "-f", "html", "-O", "nowrap=True")
+    or die "ursa highlighting failed failed (open)";
+  my $html = slurp(\*READER, {binmode => ':raw', chomp => 1});
+  close(READER) or die "ursa highlighting failed (close)";
+  return "<span class=\"highlight\"><code>$html</code></span>";
 };
 
 # Perform the request

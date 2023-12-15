@@ -1,4 +1,4 @@
-# Why do we (still) need programming languages?
+# Step 2b: Why do we (still) need programming languages?
 
 Thanks to machine learning, we no longer need programming languages to tell computers what to do: for many applications it’s possible to talk to a computer and have it interpret one’s natural language. So why do we still need programming languages?
 
