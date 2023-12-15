@@ -14,6 +14,6 @@ Here's an example:
 
 $include{../tutorial-step.html}
 
-<script src="/tutorial.bundle.js"></script>
+$nextstep{../002-what-is-programming/,What is programming?}
 
-[Next step: What is programming?](../002-what-is-programming/)
+<script src="/tutorial.bundle.js"></script>

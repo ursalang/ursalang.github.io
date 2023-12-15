@@ -6,4 +6,4 @@ Thanks to machine learning, we no longer need programming languages to tell comp
 * **Natural language is ambiguous**. For programs that we want to rely on to run without human supervision, programming languages are more reliable.
 * **Programming is fun**. Just like other formal systems, whether the wide world of mathematics or the microcosm of chess, programming is fun as an intellectual exercise. But it can have real-world effects: you can program machines that do things in the world. Instructing machines to do things is a rewarding and powerful way to relate to the human world.
 
-[Next step: Ursa, a classical language](002c-ursa-a-classical-language.md)
+$nextstep{002c-ursa-a-classical-language.md,Ursa\, a classical language}

@@ -33,10 +33,14 @@ $DarkGlass::Title = "The Ursa programming language";
 $DarkGlass::Author = "Reuben Thomas";
 $DarkGlass::Email = "rrt\@sc3d.org";
 
-# Custom macro
+# Custom macros
 $DarkGlass::Macros{githubedit} = sub {
   my ($page) = @_;
   return "https://github.com/ursalang/ursalang.github.io/edit/main/pages/$page";
+};
+$DarkGlass::Macros{nextstep} = sub {
+  my ($page, $text) = @_;
+  return "<a class=\"btn btn-primary\" href=\"$page\"><span class=\"next-step\">$text</span></a>";
 };
 
 # Perform the request

@@ -81,6 +81,10 @@ main {
   background-color: var(--bs-btn-bg);
 }
 
+.next-step:before {
+  content: "Next step: ";
+}
+
 /* Code examples */
 .highlight:not(.card-body .highlight) {
   display: table;

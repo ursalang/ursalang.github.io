@@ -12,4 +12,4 @@ The disadvantage is that Ursa will not evolve to cope with programs and computer
 
 For more information on this, see the [rationale](../../rationale.md).
 
-[Next step: Let's learn Ursa!](../003-lets-learn-ursa/)
+$nextstep{../003-lets-learn-ursa/,Let's learn Ursa!}
