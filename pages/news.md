@@ -4,6 +4,12 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 15 December 2023
+
+The tutorial has been expanded, up to a [first example](tutorial/003-lets-learn-ursa/) of some Ursa code!
+
+The colouring of code examples is now instant, as it’s done when the site is built, rather than in the browser. Behind the scenes, this involved fixes to some of the peripheral Ursalang projects, so they now work better too.
+
 ### 12 December 2023
 
 The [language reference](reference.md) is now complete (although still rather terse), and the [standard library](stdlib.md) and [JavaScript bindings](jsbindings.md) both have reference pages too.
