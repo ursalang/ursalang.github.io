@@ -4,6 +4,5 @@ In this case, the easiest way to see what is going on in the second part of the 
 
 $include{../tutorial-step.html}
 
-*To be continued…*
-<!-- $nextstep{003c-a-range-of-answers.md,A range of answers} -->
+$nextstep{003d-what-are-we-counting.md,What are we counting?}
 <script src="/tutorial.bundle.js"></script>
