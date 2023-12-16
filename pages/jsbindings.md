@@ -4,11 +4,11 @@ Ursa can use the facilities of the underlying JavaScript system. There is a gene
 
 ## Built-in facilities
 
-* `JSON`: mirrors the JavaScript `JSON` object.
-* `RegExp`: mirrors the JavaScript `RegExp` function.
-* `process`: mirrors the `process` module.
-* `document`: (in the DOM, or other environment with DOM) mirrors the `document` DOM element.
+* $ursa{JSON}: mirrors the JavaScript `JSON` object.
+* $ursa{RegExp}: mirrors the JavaScript `RegExp` function.
+* $ursa{process}: mirrors the `process` module.
+* $ursa{document}: (in the DOM, or other environment with DOM) mirrors the `document` DOM element.
 
-## `use js`
+## $ursa{use js}
 
-`use js` offers a generic interface to JavaScript libraries. `use js.foo` imports the library `foo` and binds it to the identifier `foo`.
+$ursa{use js} offers a generic interface to JavaScript libraries. $ursa{use js.foo} imports the library `foo` and binds it to the identifier $ursa{foo}.

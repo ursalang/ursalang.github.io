@@ -9,6 +9,7 @@ use utf8;
 use strict;
 use warnings;
 
+use Encode;
 use File::Temp;
 
 use File::Slurp qw(slurp);
@@ -52,15 +53,26 @@ $DarkGlass::Macros{note} = sub {
   $note_number++;
   return "<button class=\"note-button btn-secondary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#$linkId\" aria-expanded=\"false\" aria-controls=\"$linkId\">$linkText</button><span class=\"collapse\" id=\"$linkId\"><span class=\"card card-body\">$noteText</span></span>";
 };
-$DarkGlass::Macros{ursa} = sub {
+sub ursa2html {
   my ($code) = @_;
+  $code =~ s/&lt;/</g;
+  $code =~ s/&amp;/&/g;
   my $tmpfile = File::Temp->new();
   print $tmpfile $code;
   open(READER, "-|", "pygmentize", "-l", "ursa", $tmpfile, "-f", "html", "-O", "nowrap=True")
     or die "ursa highlighting failed failed (open)";
   my $html = slurp(\*READER, {binmode => ':raw', chomp => 1});
   close(READER) or die "ursa highlighting failed (close)";
-  return "<span class=\"highlight\"><code>$html</code></span>";
+  $html =~ s/^\s+|\s+$//g; # Trim extra whitespace
+  return decode_utf8($html);
+}
+$DarkGlass::Macros{ursa} = sub {
+  my ($code) = @_;
+  return "<span class=\"highlight\"><code>".ursa2html($code)."</code></span>";
+};
+$DarkGlass::Macros{ursabox} = sub {
+  my ($code) = @_;
+  return "<div class=\"highlight\"><pre><code>".ursa2html($code)."</code></pre></div>";
 };
 
 # Perform the request

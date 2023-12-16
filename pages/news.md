@@ -18,7 +18,7 @@ The web site has been fixed to work correctly with the latest Ursa release.
 
 ### 11 December 2023
 
-Release 0.2.0 is out! It comes with the start of a prelude/standard library, iterators and `for` loops, more math functions, simple file system access, and internal bug fixes. There are more test programs, and `use js`, which was broken since 0.0.9, works again, so you can access many JavaScript facilities directly.
+Release 0.2.0 is out! It comes with the start of a prelude/standard library, iterators and $ursa{for} loops, more math functions, simple file system access, and internal bug fixes. There are more test programs, and $ursa{use js}, which was broken since 0.0.9, works again, so you can access many JavaScript facilities directly.
 
 Looking forward, I have tagged several issues in GitHub with the [0.3 milestone](https://github.com/ursalang/ursa/milestone/1).
 
@@ -56,9 +56,9 @@ A couple more Rosetta Code tasks have been completed, and the web site’s home 
 
 ### 31 October 2023
 
-Release 0.0.16 allows `let` bindings to persist in the REPL, which makes the REPL reasonably usable for the first time. It is possible to have sessions like the following:
+Release 0.0.16 allows $ursa{let} bindings to persist in the REPL, which makes the REPL reasonably usable for the first time. It is possible to have sessions like the following:
 
-```ursa
+```
 Welcome to Ursa 0.0.16.
 > let a = 3
 3
@@ -73,7 +73,7 @@ An initial bare-bones version of the [language reference](reference.md) is up.
 
 ### 24 October 2023
 
-Release 0.0.15 improves the language in various small ways: simultaneous declarations are now possible with `let…and let…`, making it easier to write mutually recursive functions. The assignment operator has been changed to `:=`. Various under-the-hood improvements and fixes have been made.
+Release 0.0.15 improves the language in various small ways: simultaneous declarations are now possible with $ursa{let…and let…}, making it easier to write mutually recursive functions. The assignment operator has been changed to $ursa{:=}. Various under-the-hood improvements and fixes have been made.
 
 A new web page of “Ursalang tasks” has been created on [Rosetta Code](https://rosettacode.org/wiki/Tasks_not_implemented_in_Ursalang).
 
@@ -81,7 +81,7 @@ A new web page of “Ursalang tasks” has been created on [Rosetta Code](https:
 
 Release 0.0.14 adds some library facilities, and improves the `argv` interface. The design of the “standard library” is by no means final; the idea is just to make it easy to write somewhat useful Ursa programs! There's a test program `syms.ursa` in the `test` directory that lists the words in its input file.
 
-The syntax colouring modes have been updated to colour `and`, `or` and `not` better, typically as keywords.
+The syntax colouring modes have been updated to colour $ursa{and}, $ursa{or} and $ursa{not} better, typically as keywords.
 
 ### 17 October 2023
 
@@ -202,7 +202,7 @@ code became rather less consistent.
 ### 21 August 2023
 
 I used the new JSON syntax to make the test suite more principled, by having
-it compare results against JSON values rather than using `print()` and
+it compare results against JSON values rather than using $ursa{print()} and
 comparing the resultant text.
 
 ### 20 August 2023
