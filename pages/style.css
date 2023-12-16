@@ -111,6 +111,10 @@ div.highlight:not(.card-body .highlight) {
   width: 100%;
 }
 
+#ursa-output {
+  white-space: pre-line;
+}
+
 .ursa-error {
   color: red;
 }
