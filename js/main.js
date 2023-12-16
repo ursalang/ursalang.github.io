@@ -47,6 +47,7 @@ export function evaluate(name, getter) {
     try {
       const compiled = compile(getter())
       // console.log(serializeVal(compiled[0]))
+      $output.text('')
       const val = await new ArkState().run(compiled)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
       highlightElement($result.attr('id'), "json")
