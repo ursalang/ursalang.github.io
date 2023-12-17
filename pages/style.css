@@ -103,7 +103,7 @@ div.highlight:not(.card-body .highlight) {
   padding: 1rem;
 }
 
-.card-body pre {
+pre {
   margin-bottom: 0;
 }
 
