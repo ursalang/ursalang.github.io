@@ -51,7 +51,7 @@ $DarkGlass::Macros{note} = sub {
   my ($linkText, $noteText) = @_;
   my $linkId = "note$note_number";
   $note_number++;
-  return "<button class=\"note-button btn-secondary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#$linkId\" aria-expanded=\"false\" aria-controls=\"$linkId\">$linkText</button><span class=\"collapse\" id=\"$linkId\"><span class=\"card card-body\">$noteText</span></span>";
+  return "<button class=\"note-button btn-secondary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#$linkId\" aria-expanded=\"false\" aria-controls=\"$linkId\">$linkText</button><span class=\"collapse\" id=\"$linkId\"><span class=\"card card-body\"><span>$noteText</span></span></span>";
 };
 sub ursa2html {
   my ($code) = @_;

@@ -128,3 +128,13 @@ pre {
 .link-card-spacer {
   flex: auto;
 }
+
+/* Inset notes */
+blockquote {
+  display: table;
+  border: 1px;
+  border-style: solid;
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-left: 4rem;
+}

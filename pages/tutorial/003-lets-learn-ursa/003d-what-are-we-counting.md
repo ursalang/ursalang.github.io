@@ -12,8 +12,4 @@ What we’re doing is counting $note{how many times,What if the conjecture was f
 
 We can now get a fairly good idea of what the second part of the program is doing.
 
-*To be continued…*
-<!-- $nextstep{../004-counting-loops,Counting loops} 
-
-In the next step, ask the reader to print the numbers from 1 to 10.
--->
+$nextstep{../004-counting-loops/,Counting loops}
