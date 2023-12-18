@@ -1,4 +1,4 @@
-# Step 1: Getting started
+# Chapter 0: Getting started
 
 Like any skill, programming is something best learnt by doing it, so this tutorial includes lots of programming challenges. Each one is presented in a “challenge” widget, which contains the following elements:
 
@@ -10,10 +10,10 @@ Like any skill, programming is something best learnt by doing it, so this tutori
 
 Do try each exercise yourself before looking at the solution!
 
-Here's an example:
+Here’s an example:
 $include{../tutorial-step.html}
 
 From time to time there will be a $note{bonus button,Don’t worry\, bonus boxes are optional!} which when clicked on will open a box with supplementary material.
 
-$nextstep{../002-what-is-programming/,What is programming?}
+$nextstep{01-what-is-programming/,What is programming?}
 <script src="/tutorial.bundle.js"></script>

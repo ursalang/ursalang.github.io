@@ -85,6 +85,10 @@ main {
   content: "Next step: ";
 }
 
+.next-chapter:before {
+  content: "Next chapter: ";
+}
+
 /* Note link/buttons */
 .note-button {
   border: 0px;

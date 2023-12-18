@@ -1,4 +1,4 @@
-# Step 5b: Conjectural calculation
+# Step 8: Conjectural calculation
 
 Here we get to the heart of our $ursa{collatz} function:
 
@@ -20,6 +20,6 @@ So if $ursa{n} is even, the value of the $ursa{if} expression is $ursa{n / 2}. T
 
 What if $ursa{n} is odd? This is where $ursa{else} comes in: if the condition of the $ursa{if} is false, we evaluate the $note{$ursa{else},What if there is no $ursa{else}? Good question! We’ll come back to it.} body. In this case, it is $ursa{n * 3 + 1}, that is, 3 times $ursa{n} plus 1.
 
-So, we assign $ursa{n} to be half of itself if it’s even, or three times itself plus 1 if it’s odd. Does that sound familiar? It’s the [steps](../003-lets-learn-ursa/003d-what-are-we-counting.md) of the Collatz conjecture!
+So, we assign $ursa{n} to be half of itself if it’s even, or three times itself plus 1 if it’s odd. Does that sound familiar? It’s the [steps](../04-what-are-we-counting/) of the Collatz conjecture!
 
-$nextstep{005c-what-have-we-calculated.md,What have we calculated?}
+$nextstep{../09-what-have-we-calculated/,What have we calculated?}

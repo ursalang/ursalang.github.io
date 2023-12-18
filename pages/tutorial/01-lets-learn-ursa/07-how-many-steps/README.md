@@ -1,4 +1,4 @@
-# Step 5a: How many steps?
+# Step 7: How many steps?
 
 Now let’s look at the body of the function:
 
@@ -22,7 +22,7 @@ loop {
 }
 }
 
-We’re counting again! We have a $ursa{loop}, the “more fundamental form” promised [earlier](../004-counting-loops/). This sort of loop will repeat until it is $note{explicitly stopped,Or until the “flow of control”\, as we say\, escapes in some other way\, as we’ll see later.} with a $ursa{break} expression. Almost always, such a $ursa{break} will be “conditional”; that is, it will depend on some condition being fulfilled; otherwise, the loop will never repeat, which is rather pointless.
+We’re counting again! We have a $ursa{loop}, the “more fundamental form” promised [earlier](../05-counting-loops/). This sort of loop will repeat until it is $note{explicitly stopped,Or until the “flow of control”\, as we say\, escapes in some other way\, as we’ll see later.} with a $ursa{break} expression. Almost always, such a $ursa{break} will be “conditional”; that is, it will depend on some condition being fulfilled; otherwise, the loop will never repeat, which is rather pointless.
 
 Each time around this loop, the variable $ursa{steps} is increased by 1. How? The expression $ursa{steps := steps + 1} sets, or “assigns” the variable $ursa{steps} to the value ${steps + 1}.
 
@@ -36,4 +36,4 @@ When do we stop the loop? When the variable $ursa{n} is equal to 1: in the expre
 
 So, how many steps do we take? To find out, we need to examine the bit of the function body we omitted above.
 
-$nextstep{005b-conjectural-calculation.md,Conjectural calculation}
+$nextstep{../08-conjectural-calculation/,Conjectural calculation}

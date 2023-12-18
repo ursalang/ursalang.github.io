@@ -1,4 +1,4 @@
-# Step 3a: A source of conjecture
+# Step 1: A source of conjecture
 
 If you took the hint in the previous step and looked up the word “collatz”, you will probably have found that it’s the name of a mathematician, Lothar Collatz, and that he gave his name to a famous unsolved problem in mathematics.
 
@@ -10,4 +10,4 @@ This is what a programmer typically does when they read new code for the first t
 
 So let’s see what we can see, starting “at the top” and working down…
 
-$nextstep{003b-the-main-pieces.md,The main pieces}
+$nextstep{../02-the-main-pieces/,The main pieces}

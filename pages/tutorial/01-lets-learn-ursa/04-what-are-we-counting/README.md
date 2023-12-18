@@ -1,4 +1,4 @@
-# Step 3c: What are we counting?
+# Step 4: What are we counting?
 
 So, what are those numbers? They seem pretty random! To answer that, we need to know a bit more about the Collatz conjecture. It claims that if you take a whole number bigger than 1 and do the following:
 
@@ -12,4 +12,4 @@ What we’re doing is counting $note{how many times,What if the conjecture was f
 
 We can now get a fairly good idea of what the second part of the program is doing.
 
-$nextstep{../004-counting-loops/,Counting loops}
+$nextstep{../05-counting-loops/,Counting loops}

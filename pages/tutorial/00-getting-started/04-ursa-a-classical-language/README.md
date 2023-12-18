@@ -1,4 +1,4 @@
-# Step 2c: Ursa, a classical language
+# Step 4: Ursa, a classical language
 
 Ursa is a “classical” language. That is to say, it embodies ideas from the main stream of programming language development from the earliest days, even before computers, of the 1930s, to about the turn of the 21st century. It should look familiar to anyone who has learned to program between 1970 and 2020. It is intended to remain familiar to programmers for at least as long: for the next 50 to 100 years, humans using programming languages should find Ursa straightforward, if increasingly old-fashioned.
 
@@ -10,6 +10,6 @@ With Ursa, this will not be necessary. Also, the language will not become more c
 
 The disadvantage is that Ursa will not evolve to cope with programs and computers of the future. That’s OK; there will be new languages for that!
 
-For more about Ursa’s design, see the [rationale](../../rationale.md).
+For more about Ursa’s design, see the [rationale](../../../rationale.md).
 
-$nextstep{../003-lets-learn-ursa/,Let's learn Ursa!}
+$nextstep{../../01-lets-learn-ursa/,Let’s learn Ursa!}

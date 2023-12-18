@@ -43,8 +43,9 @@ $DarkGlass::Macros{githubedit} = sub {
   return "https://github.com/ursalang/ursalang.github.io/edit/main/pages/$page";
 };
 $DarkGlass::Macros{nextstep} = sub {
-  my ($page, $text) = @_;
-  return "<a class=\"btn btn-primary\" href=\"$page\"><span class=\"next-step\">$text</span></a>";
+  my ($page, $text, $class) = @_;
+  $class ||= "next-step";
+  return "<a class=\"btn btn-primary\" href=\"$page\"><span class=\"$class\">$text</span></a>";
 };
 my $note_number = 0;
 $DarkGlass::Macros{note} = sub {
