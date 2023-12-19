@@ -50,7 +50,7 @@
                 <div class="tab-pane fade show active" id="hello-tab-pane" role="tabpanel" aria-labelledby="hello-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body">$pasteconvert{hello-woods.ursa}</div>
+                        <div class="card-body" id="hello-input">$pasteconvert{hello-woods.ursa}</div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
@@ -64,7 +64,7 @@
                 <div class="tab-pane fade" id="functions-tab-pane" role="tabpanel" aria-labelledby="functions-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body">$pasteconvert{fac-fn-let.ursa}</div>
+                        <div class="card-body" id="functions-input">$pasteconvert{fac-fn-let.ursa}</div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
@@ -78,7 +78,7 @@
                 <div class="tab-pane fade" id="lists-tab-pane" role="tabpanel" aria-labelledby="lists-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body">$pasteconvert{sum-list-return.ursa}</div>
+                        <div class="card-body" id="lists-input">$pasteconvert{sum-list-return.ursa}</div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
@@ -92,7 +92,7 @@
                 <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body">$pasteconvert{two-double-closures.ursa}</div>
+                        <div class="card-body" id="closures-input">$pasteconvert{two-double-closures.ursa}</div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
