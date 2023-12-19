@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 18 December 2023
+
+The [tutorial](tutorial/) now has a complete introduction and first chapter, walking through an example of Ursa code to introduce some fundamental programming concepts and skills.
+
 ### 15 December 2023
 
 The [tutorial](tutorial/) has been expanded, up to a first example of some Ursa code!
