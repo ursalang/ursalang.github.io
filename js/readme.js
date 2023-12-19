@@ -23,7 +23,6 @@ $(async function () {
     })
     $('#ursa-latest-release-version').text(latestRelease.data.tag_name)
     const date = new Date(Date.parse(latestRelease.data.created_at))
-    console.log(date)
     $('#ursa-latest-release-date').text(date.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }))
     $('#ursa-latest-release-notes').text(latestRelease.data.body)
 })

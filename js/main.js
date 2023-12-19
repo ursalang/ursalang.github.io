@@ -25,7 +25,6 @@ highlightWorker.onmessage = (msg) => {
 
 export async function highlightElement(id, lexer) {
   const elem = document.getElementById(id)
-  console.log(`id: ${id}`)
   highlightWorker.postMessage({ highlight: { code: elem.textContent, lexer, formatter: 'html', outputDiv: id } })
 }
 
@@ -46,7 +45,7 @@ export function evaluate(name, getter) {
 
     try {
       const compiled = compile(getter())
-      // console.log(serializeVal(compiled[0]))
+      // console.log(serializeVal(compiled))
       $output.text('')
       const val = await new ArkState().run(compiled)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
