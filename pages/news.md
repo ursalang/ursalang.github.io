@@ -4,6 +4,14 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 27 December 2023
+
+Andrei Olea wrote to the [Matrix space](https://matrix.to/#/#ursalang:matrix.org) to say that he had done [2023 Advent of Code Day 25](https://adventofcode.com/2023/day/25) partly in Ursa. [His solution](https://gitlab.com/nonreviad/advent-of-code-2023/-/blob/main/day_25/) also uses Graphviz!
+
+### 19 December 2023
+
+Ursa now has a [blog](blog/)! I will write about the process of making Ursa there. The inital post gives some pre-history.
+
 ### 18 December 2023
 
 The [tutorial](tutorial/) now has a complete introduction and first chapter, walking through an example of Ursa code to introduce some fundamental programming concepts and skills.
