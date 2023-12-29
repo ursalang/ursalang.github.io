@@ -1,10 +1,10 @@
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   nav.navbar {
     position: static;
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .navbar-expand-md {
     flex-wrap: wrap;
   }
