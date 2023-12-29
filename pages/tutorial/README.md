@@ -6,4 +6,4 @@ Ursa is meant to be a simple, friendly language. This tutorial tries to help you
 
 Also, see the [language reference](../reference.md).
 
-$nextstep{00-getting-started/,Getting started,next-chapter}
+$nextstep{0. Getting started/,Getting started,next-chapter}
