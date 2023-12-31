@@ -85,8 +85,9 @@ $ursabox{
 Lists may be indexed (indices start at 0) and their length taken:
 
 $ursabox{
-[1\, 2\, 3][1] // 2
-[1\, 2].length // also 2
+[1\, 2\, 3].get(1) // 2
+[1\, 2\, 3].set(1, 4) // [1, 4, 2]
+[1\, 2].length // 2
 }
 
 Lists have an iterator method $ursa{iter} (see [Iterators](#iterators)) that returns the list elements in order:
@@ -102,6 +103,14 @@ Map literals are written between braces, with the key and value separated by a c
 $ursabox{
 {"a": 1\, "b": 2\, "c": 3}
 {1: "a"\, 2: "hello"\, [1\, 2\, 3]: false}
+}
+
+Maps may be indexed. Note the final example: two lists with identical contents are not the same value!
+
+$ursabox{
+{"a": 1\, "b": 2\, "c": 3}.get("a") // 1
+{1: "a"\, "hello": 2\, [1\, 2\, 3]: false}.set("hello", "goodbye") // {1: "a"\, "hello": "goodbye", [1\, 2\, 3]: false}
+{1: "a"\, "hello": 2\, [1\, 2\, 3]: false}.set([1\, 2\, 3], "goodbye") // N.B.
 }
 
 Maps have an iterator method $ursa{iter} (see [Iterators](#iterators)) that returns each key–value pair as a list of two elements, in insertion order.
