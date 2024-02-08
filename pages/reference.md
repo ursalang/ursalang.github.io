@@ -33,8 +33,8 @@ Identifiers, or symbols, consist of a letter or underscore followed by zero or m
 
 $ursabox{
 abc
-_
-_12
+\_
+\_12
 sh33p
 }
 
@@ -184,8 +184,8 @@ The following operators are available. They are given in decreasing order of pre
 
 #### Binary operators
 
-* $ursa{**} exponentiation
-* $ursa{*} product
+* $ursa{\*\*} exponentiation
+* $ursa{\*} product
 * $ursa{/} quotient
 * $ursa{%} remainder
 * $ursa{+} addition
