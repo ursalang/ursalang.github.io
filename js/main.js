@@ -1,5 +1,6 @@
 window.$ = require('jquery')
-import { globals, ArkState, ArkValRef, ArkNull, NativeFn } from '@ursalang/ursa/lib/ark/interpreter'
+import { globals, ArkState, ArkObject, ArkNull, NativeFn } from '@ursalang/ursa/lib/ark/interpreter'
+import { Environment, Frame } from '@ursalang/ursa/lib/ark/compiler'
 import { toJs } from '@ursalang/ursa/lib/ark/ffi'
 import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
@@ -37,17 +38,19 @@ export function evaluate(name, getter) {
   const $output = $(`#${name}-output`)
 
   return async function () {
-    globals.set('print', new ArkValRef(new NativeFn(['obj'], (obj) => {
-      const output = toJs(obj).toString()
-      $output.text(`${$output.text()}${output}\n`)
+    let output = ''
+    const externalSyms = new ArkObject(new Map(globals.properties))
+    externalSyms.set('print', new NativeFn(['obj'], (obj) => {
+      output += toJs(obj).toString()
       return ArkNull()
-    })))
+    }))
 
     try {
-      const compiled = compile(getter())
+      const compiled = compile(getter(), new Environment([new Frame([], [])], externalSyms))
       // console.log(serializeVal(compiled))
       $output.text('')
       const val = await new ArkState().run(compiled)
+      $output.text(`${output}\n`)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
       highlightElement($result.attr('id'), "json")
     } catch (error) {
