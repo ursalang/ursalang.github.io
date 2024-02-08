@@ -52,6 +52,7 @@ The following data types are built in:
 * Object: maps of symbolic properties to arbitrarily-typed values.
 * Function: functions are first-class. See the next section for more details.
 
+Type annotations and definitions are built into the grammar, but are currently ignored, so this guide does not yet describe them.
 
 ### Numbers
 
@@ -123,6 +124,7 @@ $ursabox{
 {a = 1\, b = [1\, 2\, 3]\, c = false}
 }
 
+Objects may be indexed. Properties may be reassigned, but new properties may not be added.
 
 ## Code
 
@@ -274,6 +276,23 @@ f(1) // value: 2
 <h3 id="iterators">Iterators</h3>
 
 An iterator is just a function, but to be useful it should return a different value each time it is called, and then $ursa{null} when there are no more values. [Lists](#lists) and [maps](#maps) provide an $ursa{iter} method that iterates over the elements of the list or map.
+
+### Asynchronous execution
+
+_This area of Ursa is under development and will change in some details._
+
+It is possible to make an expression run asynchronously by prefixing it with `launch`. This gives a “promise”.
+
+$ursabox{
+let p = launch f()
+g() // g may be called before f returns
+}
+
+Promises can be “awaited”:
+
+$ursabox{
+let x = await p // x now has the value computed by f()
+}
 
 ### $ursa{use}
 
