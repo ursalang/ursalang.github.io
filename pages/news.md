@@ -4,6 +4,10 @@ A summary of the main events around and about Ursa.
 
 ## 2023
 
+### 18 March 2024
+
+Version 0.2.15 marks a milestone: it has a complete JavaScript back-end. So far this is not very useful; in particular, you can’t use it to compile an Ursa program to standalone JavaScript. But it does represent a considerable amount of work compiling Ursa to a different target, it comes with full sourcemap support, and will make it easier to use Ursa on the web and in IDEs.
+
 ### 27 December 2023
 
 Andrei Olea wrote to the [Matrix space](https://matrix.to/#/#ursalang:matrix.org) to say that he had done [2023 Advent of Code Day 25](https://adventofcode.com/2023/day/25) partly in Ursa. [His solution](https://gitlab.com/nonreviad/advent-of-code-2023/-/blob/main/day_25/) also uses Graphviz!
