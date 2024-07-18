@@ -1,7 +1,7 @@
 window.$ = require('jquery')
 import { globals, ArkState, ArkObject, ArkNull, NativeFn } from '@ursalang/ursa/lib/ark/interpreter'
-import { Environment, Frame } from '@ursalang/ursa/lib/ark/compiler'
-import { toJs } from '@ursalang/ursa/lib/ark/ffi'
+import { Environment, Frame } from '@ursalang/ursa/lib/ark/reader'
+import { toJs } from '@ursalang/ursa/lib/ark/interpreter'
 import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
