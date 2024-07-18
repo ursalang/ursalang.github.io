@@ -59,7 +59,7 @@ Auto-detect syntax (JSON/Ursa): use filename, file contents (for `#!`)
 * Network (client/server; including sockets?)
 * File system (including pipes?)
 * Terminal?
-* Graphics (Canvas ((EaselJS)[]), OpenGL/WebGL ((PixiJS)[]))
+* Graphics (Canvas ((EaselJS)[https://createjs.com/easeljs]), OpenGL/WebGL ((PixiJS)[https://pixijs.com]))
 * Text rendering
 * Text handling (strings)
 * Sound
