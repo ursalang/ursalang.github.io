@@ -2,11 +2,19 @@
 
 A summary of the main events around and about Ursa.
 
-## 2023
+## 2024
+
+### 18 July 2024
+
+The first release for four months! Version 0.2.17 includes a brand new interpreter, which is iterative, not recursive, modelling Ursa’s control flow and stack explicitly. This will allow us to use JavaScript generators straightforwardly to implement Ursa generators, coming soon!
+
+A quick note: it’s been so long since the last release because I’ve been busy with other things. In a way that’s bad, but in a way it’s good, because it means that work on Ursa is still proceeding reasonably quickly in terms of how many hours it takes, just not in “calendar time”. Hopefully I’ll be more productive for the next few months.
 
 ### 18 March 2024
 
 Version 0.2.15 marks a milestone: it has a complete JavaScript back-end. So far this is not very useful; in particular, you can’t use it to compile an Ursa program to standalone JavaScript. But it does represent a considerable amount of work compiling Ursa to a different target, it comes with full sourcemap support, and will make it easier to use Ursa on the web and in IDEs.
+
+## 2023
 
 ### 27 December 2023
 
