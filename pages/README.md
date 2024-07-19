@@ -142,6 +142,8 @@
                 <div class="card-body link-card">
                     <p>Read about the development of Ursa.</p>
                     <p>Latest post: $latestblog</p>
+                    <div class="link-card-spacer"></div>
+                    <div><a class="btn btn-primary" href="$url{/blog}">Go to blog</a></div>
                 </div>
             </div>
         </div>
