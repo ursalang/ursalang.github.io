@@ -81,11 +81,11 @@ $DarkGlass::Macros{ursabox} = sub {
 };
 $DarkGlass::Macros{latestblog} = sub {
   my ($blogdir) = "$DarkGlass::DocumentRoot/blog";
-  open(READER, "-|", "ls", "-r",$blogdir) or die "could not read blog directory (open)";
+  open(READER, "-|", "/bin/ls", "-r",$blogdir) or die "could not read blog directory (open)";
   chomp(my @lines = <READER>);
   close(READER) or die "could not read blog directory (close)";
   my $latest = $lines[1]; # Skip README.md
-  my $timestamp = localtime(stat("$blogdir/$latest")->mtime);
+  my $timestamp = localtime(stat("$blogdir/$latest/README.md")->mtime);
   my $date_string = sprintf("%s %s %s", Month_to_Text($timestamp->mon() + 1), English_Ordinal($timestamp->mday()), $timestamp->year() + 1900);
   return "<a href=\"blog/$latest\">$latest</a> ($date_string)";
 };
