@@ -1,6 +1,6 @@
 #!/usr/bin/perl -T
 # DarkGlass
-# (c) Reuben Thomas <rrt@sc3d.org> 2002-2023
+# (c) Reuben Thomas <rrt@sc3d.org> 2002-2024
 # https://rrt.sc3d.org/Software/DarkGlass
 # Distributed under the GNU General Public License version 3, or (at
 # your option) any later version.
@@ -11,7 +11,10 @@ use warnings;
 
 use Encode;
 use File::Temp;
+use File::stat;
+use Time::localtime;
 
+use Date::Calc qw(Month_to_Text English_Ordinal);
 use File::Slurp qw(slurp);
 use CGI qw(:standard);
 
@@ -21,6 +24,7 @@ BEGIN {
   $ENV{PATH} = "/bin:/usr/bin:/usr/local/bin";
 }
 use DarkGlass;
+use RRT::Misc 0.12;
 
 
 # Configuration
@@ -74,6 +78,16 @@ $DarkGlass::Macros{ursa} = sub {
 $DarkGlass::Macros{ursabox} = sub {
   my ($code) = @_;
   return "<div class=\"highlight\"><pre><code>".ursa2html($code)."</code></pre></div>";
+};
+$DarkGlass::Macros{latestblog} = sub {
+  my ($blogdir) = "$DarkGlass::DocumentRoot/blog";
+  open(READER, "-|", "ls", "-r",$blogdir) or die "could not read blog directory (open)";
+  chomp(my @lines = <READER>);
+  close(READER) or die "could not read blog directory (close)";
+  my $latest = $lines[1]; # Skip README.md
+  my $timestamp = localtime(stat("$blogdir/$latest")->mtime);
+  my $date_string = sprintf("%s %s %s", Month_to_Text($timestamp->mon() + 1), English_Ordinal($timestamp->mday()), $timestamp->year() + 1900);
+  return "<a href=\"blog/$latest\">$latest</a> ($date_string)";
 };
 
 # Perform the request

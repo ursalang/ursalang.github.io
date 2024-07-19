@@ -119,7 +119,7 @@
     </div>
 </div>
 <div class="row mb-3">
-    <div class="col-sm-6 mb-3 mb-sm-0 mx-auto">
+    <div class="col-sm-9 mb-3 mb-sm-0 mx-auto">
         <div class="card-group">
             <div class="card">
                 <div class="card-header">Rosetta Code</div>
@@ -135,6 +135,13 @@
                     <p>Join us in our Matrix space! we have rooms for general discussion, newbies, and the web site.</p>
                     <div class="link-card-spacer"></div>
                     <div><a class="btn btn-primary" href="https://matrix.to/#/#ursalang:matrix.org">Go to Matrix</a></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Blog</div>
+                <div class="card-body link-card">
+                    <p>Read about the development of Ursa.</p>
+                    <p>Latest post: $latestblog</p>
                 </div>
             </div>
         </div>
