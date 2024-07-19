@@ -2,6 +2,7 @@ window.$ = require('jquery')
 import { globals, ArkState, ArkObject, ArkNull, NativeFn } from '@ursalang/ursa/lib/ark/interpreter'
 import { Environment, Frame } from '@ursalang/ursa/lib/ark/reader'
 import { toJs } from '@ursalang/ursa/lib/ark/interpreter'
+import { expToInst } from '@ursalang/ursa/lib/ark/flatten'
 import { serializeVal } from '@ursalang/ursa/lib/ark/serialize'
 import { compile } from '@ursalang/ursa/lib/ursa/compiler'
 
@@ -49,7 +50,7 @@ export function evaluate(name, getter) {
       const compiled = compile(getter(), new Environment([new Frame([], [])], externalSyms))
       // console.log(serializeVal(compiled))
       $output.text('')
-      const val = await new ArkState().run(compiled)
+      const val = await new ArkState(expToInst(compiled)).run()
       $output.text(`${output}\n`)
       $result.html(`<pre>${serializeVal(val)}</pre>`)
       highlightElement($result.attr('id'), "json")
