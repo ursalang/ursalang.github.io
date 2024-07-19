@@ -87,7 +87,7 @@ $DarkGlass::Macros{latestblog} = sub {
   my $latest = $lines[1]; # Skip README.md
   my $timestamp = localtime(stat("$blogdir/$latest/README.md")->mtime);
   my $date_string = sprintf("%s %s %s", Month_to_Text($timestamp->mon() + 1), English_Ordinal($timestamp->mday()), $timestamp->year() + 1900);
-  return "<a href=\"blog/$latest\">$latest</a> ($date_string)";
+  return "<a href=\"blog/$latest/README.md\">$latest</a> ($date_string)";
 };
 
 # Perform the request
