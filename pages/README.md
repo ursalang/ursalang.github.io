@@ -39,7 +39,7 @@
                         <button class="nav-link" id="lists-tab" data-bs-toggle="tab" data-bs-target="#lists-tab-pane" type="button" role="tab" aria-controls="lists-tab-pane" aria-selected="false">Lists</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="closures-tab" data-bs-toggle="tab" data-bs-target="#closures-tab-pane" type="button" role="tab" aria-controls="closures-tab-pane" aria-selected="false">Closures</button>
+                        <button class="nav-link" id="generators-tab" data-bs-toggle="tab" data-bs-target="#generators-tab-pane" type="button" role="tab" aria-controls="generators-tab-pane" aria-selected="false">Generators</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link btn btn-primary highlight-button" id="try-tab" data-bs-toggle="tab" data-bs-target="#try-tab-pane" type="button" role="tab" aria-controls="try-tab-pane" aria-selected="false">Live Demo</button>
@@ -89,18 +89,18 @@
                         <div class="card-body" id="lists-output"></div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="closures-tab-pane" role="tabpanel" aria-labelledby="closures-tab" tabindex="0">
+                <div class="tab-pane fade" id="generators-tab-pane" role="tabpanel" aria-labelledby="generators-tab" tabindex="0">
                     <div class="card">
                         <div class="card-header"><h6>Code</h6></div>
-                        <div class="card-body" id="closures-input">$pasteconvert{two-double-closures.ursa}</div>
+                        <div class="card-body" id="generators-input">$pasteconvert{yield.ursa}</div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Result</h6></div>
-                        <div class="card-body" id="closures-result"></div>
+                        <div class="card-body" id="generators-result"></div>
                     </div>
                     <div class="card">
                         <div class="card-header"><h6>Output</h6></div>
-                        <div class="card-body" id="closures-output"></div>
+                        <div class="card-body" id="generators-output"></div>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="try-tab-pane" role="tabpanel" aria-labelledby="try-tab" tabindex="0">

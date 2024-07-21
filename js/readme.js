@@ -12,7 +12,7 @@ $(async function () {
     evaluate("hello")()
     evaluate("functions")()
     evaluate("lists")()
-    evaluate("closures")()
+    evaluate("generators")()
 
     // Get latest release data from GitHub
     const octokit = new Octokit()
