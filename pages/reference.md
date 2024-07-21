@@ -275,7 +275,39 @@ f(1) // value: 2
 
 <h3 id="iterators">Iterators</h3>
 
-An iterator is just a function, but to be useful it should return a different value each time it is called, and then $ursa{null} when there are no more values. [Lists](#lists) and [maps](#maps) provide an $ursa{iter} method that iterates over the elements of the list or map.
+An iterator is just a function, but to be useful it should return a different value each time it is called, and then $ursa{null} when there are no more values. [Lists](#lists) and [maps](#maps) provide an $ursa{iter} method that iterates over the elements of the list or map. Iterators are often written using [Generators](#generators).
+
+<h4 id="generators">Generators</h4>
+
+Generators are functions where a single invocation can be called and return more than once. When a generator function is called, it returns a function that successively returns the values of the generator, until it returns $ursa{null}. After that, the generator will only return $ursa{null}.
+
+The $ursa{yield} keyword is used to return a value from a generator. If $ursa{return} is used in a generator, then it will stop at that point.
+
+Generators are introduced with the keyword $ursa{gen} (instead of $ursa{fn}), and $ursa{yield} may only be used in generators.
+
+Here is an example of a generator that takes a list as input, and returns its values, doubled:
+
+$ursabox{
+let g = gen(l) {
+    for n of l.iter() { yield n * 2 }
+}
+}
+
+When a generator is called, it takes a single argument which becomes the value of the $ursa{yield} expression. Here is an example of a generator that keeps a running total and returns the current total on each call:
+
+$ursabox{
+let totalizer = gen() {
+    let i = 0
+    loop {
+        i := i + (yield i)
+    }
+}
+let t = totalizer()
+print(t(0)) // prints: 0
+print(t(3)) // prints: 3
+print(t(2)) // prints: 5
+}
+
 
 ### Asynchronous execution
 
