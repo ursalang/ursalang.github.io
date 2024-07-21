@@ -42,7 +42,7 @@ export function evaluate(name, getter) {
     let output = ''
     const externalSyms = new ArkObject(new Map(globals.properties))
     externalSyms.set('print', new NativeFn(['obj'], (obj) => {
-      output += toJs(obj).toString()
+      output += toJs(obj).toString() + '\n'
       return ArkNull()
     }))
 
@@ -51,7 +51,7 @@ export function evaluate(name, getter) {
       // console.log(serializeVal(compiled))
       $output.text('')
       const val = await new ArkState(expToInst(compiled)).run()
-      $output.text(`${output}\n`)
+      $output.html(output.replace(/\n/g, '<br>'))
       $result.html(`<pre>${serializeVal(val)}</pre>`)
       highlightElement($result.attr('id'), "json")
     } catch (error) {
