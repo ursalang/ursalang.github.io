@@ -8,5 +8,4 @@ In this chapter we saw some of the building blocks of Ursa: variables, assignmen
 
 In the next chapter, we’ll use a completely different example to revisit the same building blocks.
 
-*To be continued…*
-<!-- $nextstep{../../2. ???/,???} -->
+$nextstep{../../2. Unreal\, artless/,Unreal\, artless}
