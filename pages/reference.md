@@ -43,18 +43,28 @@ sh33p
 
 The following data types are built in:
 
-* $ursa{null}: a distinguished value, used as the value of expressions that have no other natural value.
-* Boolean: the constants $ursa{true} and $ursa{false}.
-* Number: for now, floating point. Later, integers of various sizes will be distinguished from floating point.
-* String: Unicode strings. Later, byte strings will also be supported.
-* List: lists of arbitrary-typed values.
-* Map: maps with arbitrary-types keys and values.
-* Object: maps of symbolic properties to arbitrarily-typed values.
-* Function: functions are first-class. See the next section for more details.
+### $ursa{null}
 
-Type annotations and definitions are built into the grammar, but are currently ignored, so this guide does not yet describe them.
+A distinguished value, used as the value of expressions that have no other natural value. It has the following methods:
 
-### Numbers
+* $ursa{equals}
+* $ursa{notEquals}
+
+These are also available as [operators](#operators).
+
+### Boolean
+
+This consists of the constants $ursa{true} and $ursa{false}. It has the following methods:
+
+* $ursa{equals}
+* $ursa{notEquals}
+* $ursa{not}
+
+These are also available as [operators](#operators).
+
+### Number
+
+For now, floating point. Later, integers of various sizes will be distinguished from floating point.
 
 For now, only decimal numbers are permitted, with an optional decimal point and fractional part (no exponent notation). Later, hexadecimal and binary will also be supported, as well as exponent notation.
 
@@ -64,8 +74,36 @@ $ursabox{
 -1
 }
 
-### Strings
+It has the following methods:
 
+* $ursa{equals}
+* $ursa{notEquals}
+* $ursa{toString}
+* $ursa{pos}
+* $ursa{neg}
+* $ursa{bitwiseNot}
+* $ursa{lt}
+* $ursa{leq}
+* $ursa{gt}
+* $ursa{geq}
+* $ursa{add}
+* $ursa{sub}
+* $ursa{mul}
+* $ursa{div}
+* $ursa{mod}
+* $ursa{exp}
+* $ursa{bitwiseAnd}
+* $ursa{bitwiseOr}
+* $ursa{bitwiseXor}
+* $ursa{shiftLeft}
+* $ursa{shiftRight}
+* $ursa{shiftRightArith}
+
+These are also available as [operators](#operators).
+
+### String
+
+Unicode strings. Later, byte strings will also be supported.
 For now, the same as JavaScript’s, but must be delimited with double quotes. JavaScript-style escapes are permitted.
 
 $ursabox{
@@ -74,7 +112,20 @@ $ursabox{
 "\u2028"
 }
 
-<h3 id="lists">Lists</h3>
+Strings have the following methods available as [operators](#operators):
+
+* $ursa{equals}
+* $ursa{notEquals}
+
+The following methods are also available:
+
+* $ursa{get(n)} returns the $ursa{n}th character of the string (0-indexed).
+* $ursa{iter()} returns an iterator for the characters of the string. 
+* $ursa{split(sep)} returns a list of sub-strings separated by the string $ursa{sep}.
+
+<h3 id="list">List</h3>
+
+Lists of arbitrary-typed values.
 
 List literals are written between square brackets, with list items separated by commas:
 
@@ -91,13 +142,27 @@ $ursabox{
 [1\, 2].length // 2
 }
 
-Lists have an iterator method $ursa{iter} (see [Iterators](#iterators)) that returns the list elements in order:
+Lists have the following methods:
+
+* $ursa{len()} returns the number of elements in the list.
+* $ursa{get(n)} returns the $ursa{n}th element of the list, or $ursa{null} if $ursa{n} is not a valid index.
+* $ursa{set(n, v)} sets the $ursa{n}th element of the list to value $ursa{v}. The list must already contain at least $ursa{n} values.
+* $ursa{push(v)} adds the value $ursa{v} to the end of the list.
+* $ursa{pop()} removes the last value from the list and returns it, or $ursa{null} if the list is empty.
+* $ursa{slice([from[, to]])} returns a new list consisting of the items from $ursa{from} inclusive to $ursa{to} exclusive. If ${to} is omitted, items to the end of the original list are included in the new one. If $ursa{from} is also omitted, the entire list is copied.
+* $ursa{iter()} returns an iterator (see [Iterators](#iterators)) that returns the list elements in order.
+* $ursa{sorted()} returns a new list with the elements sorted in ascending order.
+* $ursa{join(sep)} returns a string consisting of the elements of the list separated by the string $ursa{sep}.
+
+Here is an example that uses $ursa{iter}:
 
 $ursabox{
 for e in [1\, 2\, 3].iter() { print(e) }
 }
 
-<h3 id="maps">Maps</h3>
+<h3 id="map">Map</h3>
+
+Maps with arbitrary-types keys and values.
 
 Map literals are written between braces, with the key and value separated by a colon, and key–value pairs separated by commas:
 
@@ -114,9 +179,19 @@ $ursabox{
 {1: "a"\, "hello": 2\, [1\, 2\, 3]: false}.set([1\, 2\, 3], "goodbye") // N.B.
 }
 
-Maps have an iterator method $ursa{iter} (see [Iterators](#iterators)) that returns each key–value pair as a list of two elements, in insertion order.
+The following methods are available:
 
-### Objects
+* $ursa{get(k)} returns the value corresponding to key $ursa{k}, or $ursa{null} if no such key exists.
+* $ursa{set(k, v)} sets key $ursa{k} to value $ursa{v}, and returns the map.
+* $ursa{delete(k)} removes the entry for key ${k}, if any, and returns the map.
+* $ursa{has(k)} returns $ursa{true} if the map contains key ${k}, and $ursa{false} otherwise.
+* $ursa{iter()} returns an iterator (see [Iterators](#iterators)) that successively returns lists of each key–value pair, in insertion order.
+* $ursa{keys()} returns an iterator over the keys, in insertion order.
+* $ursa{values()} returns an iterator over the values, in insertion order.
+
+### Object
+
+Maps of symbolic properties to arbitrarily-typed values.
 
 Object literals are written between braces, with a property name and value separated by an equals sign:
 
@@ -124,7 +199,16 @@ $ursabox{
 {a = 1\, b = [1\, 2\, 3]\, c = false}
 }
 
-Objects may be indexed. Properties may be reassigned, but new properties may not be added.
+Objects have two methods:
+
+* $ursa{equals}
+* $ursa{notEquals}
+
+### Function
+
+Functions are first-class. See the next section for more details.
+
+Type annotations and definitions are built into the grammar, but are currently ignored, so this guide does not yet describe them.
 
 ## Code
 
@@ -170,10 +254,9 @@ $ursabox{
 let a = 3 and let b = 4
 }
 
-### Operators
+<h3 id="operators">Operators</h3>
 
 The following operators are available. They are given in decreasing order of precedence.
-
 
 #### Unary operators
 
