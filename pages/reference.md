@@ -231,12 +231,13 @@ A block is a sequence written in curly braces. Blocks are used to clarify the sy
 
 ### Declarations
 
-Variables are declared with $ursa{let}, and must always include an initial value:
+Constants are declared with $ursa{let} and variables with $ursa{var}. Declarations must include an initial value:
 
 $ursabox{
 let n = 3
 let s = "hello"
 let l = [1\, 2\, 3]
+var total = 0
 }
 
 The value of a declaration expression is the value of its right-hand side. The scope of the identifier includes the initializer; this makes it easy to define recursive functions. On the other hand, the following is not allowed:
@@ -288,10 +289,10 @@ The following operators are available. They are given in decreasing order of pre
 
 ### Assignments
 
-A variable may be assigned to with the assignment operator $ursa{:=}:
+A variable or object property may be assigned to with the assignment operator $ursa{:=}:
 
 $ursabox{
-let x = 1
+var x = 1
 x := x + 1 // x is now 2
 }
 
@@ -349,7 +350,7 @@ See [Iterators](#iterators).
 
 ### Functions
 
-Functions are first-class in Ursa. A function is written using the $ursa{fn} keyword, followed by its formal parameters in parentheses, followed by its body as a block. The value of a function is the value of the last expression evaluated before it returns, or the value given with $ursa{return}, if any, or $ursa{null}. Functions are called by adding parentheses containing zero or more arguments to a function value
+Functions are first-class in Ursa. A function is written using the $ursa{fn} keyword, followed by its formal parameters in parentheses, followed by its body as a block. The function parameters are constant (as if declared with $ursa{let}). The value of a function is the value of the last expression evaluated before it returns, or the value given with $ursa{return}, if any, or $ursa{null}. Functions are called by adding parentheses containing zero or more arguments to a function value:
 
 $ursabox{
 let f = fn(x) { x + 1 }
@@ -380,7 +381,7 @@ When a generator is called, it takes a single argument which becomes the value o
 
 $ursabox{
 let totalizer = gen() {
-    let i = 0
+    var i = 0
     loop {
         i := i + (yield i)
     }

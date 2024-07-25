@@ -1,5 +1,6 @@
-let collatz = fn(n) {
-  let steps = 0
+let collatz = fn(n_) {
+  var n = n_
+  var steps = 0
   loop {
     if n == 1 { break steps }
     n := (if n % 2 == 0 { n / 2 } else { n * 3 + 1 })
