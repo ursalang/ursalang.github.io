@@ -1,5 +1,5 @@
 window.$ = require('jquery')
-import { globals, ArkObject, ArkNull, NativeFn, toJs } from '@ursalang/ursa/lib/ark/code'
+import { globals, ArkObject, ArkNull, NativeFn, toJs } from '@ursalang/ursa/lib/ark/data'
 import { ArkState } from '@ursalang/ursa/lib/ark/interpreter'
 import { Environment, Frame } from '@ursalang/ursa/lib/ark/reader'
 import { expToInst } from '@ursalang/ursa/lib/ark/flatten'
