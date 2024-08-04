@@ -397,18 +397,20 @@ print(t(2)) // prints: 5
 
 _This area of Ursa is under development and will change in some details._
 
-It is possible to make an expression run asynchronously by prefixing it with `launch`. This gives a “promise”.
+It is possible to make an expression run asynchronously by prefixing it with `launch`. This gives an “operation”.
 
 $ursabox{
 let p = launch f()
 g() // g may be called before f returns
 }
 
-Promises can be “awaited”:
+Operations can be “awaited”:
 
 $ursabox{
 let x = await p // x now has the value computed by f()
 }
+
+When the main program stops running, any currently-running operations are also stopped.
 
 ### $ursa{use}
 
