@@ -109,11 +109,12 @@ main {
 }
 
 /* Code examples */
-div.highlight:not(.card-body .highlight) {
+pre:not(.card-body .highlight) {
   display: table;
+  margin: 1rem;
 }
 
-.highlight:not(.card-body .highlight) pre {
+pre:not(.card-body .highlight):not(.card-body pre) {
   border: 1px;
   border-style: solid;
   padding: 1rem;

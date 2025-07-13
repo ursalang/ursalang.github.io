@@ -1,11 +1,11 @@
 {
   "name": "@ursa/ursa-web-demo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Ursa programming language web demo and language site",
   "scripts": {
     "prebuild": "./build-extras.sh",
-    "build": "npm run prebuild && webpack && ./cgi-bin/static-site --verbose --force ./cgi-bin/web.pl ./_site",
-    "serve": "npm run prebuild && webpack watch & node ./cgi-bin/server.js"
+    "build": "npm run prebuild && webpack && linton publish --force ./pages ./_site",
+    "serve": "npm run prebuild && webpack watch & linton serve ./_site"
   },
   "author": "Reuben Thomas",
   "license": "ISC",
@@ -18,7 +18,6 @@
     "octokit": "^3.1.1"
   },
   "devDependencies": {
-    "cgi": "^0.3.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-watch-files-plugin": "^1.2.1"

@@ -35,16 +35,11 @@ jobs:
           submodules: recursive
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Install DarkGlass dependencies
-        run: |
-          sudo apt-get -y install xdg-utils discount libcgi-pm-perl libfile-slurp-perl libfile-mimeinfo-perl libimage-exiftool-perl libdatetime-perl libdate-calc-perl libhtml-parser-perl libhtml-tiny-perl libxml-libxslt-perl libpdf-api2-perl libperl6-slurp-perl libxml-atom-perl libmodule-path-perl python3-xdg python3-pip imagemagick
-          sudo pip install hulot
-          sudo chmod 755 /usr/local/bin
       - name: Install our dependencies
         run: |
           git clone https://github.com/ursalang/ursa-gtksourceview
           xdg-mime install ursa-gtksourceview/ursalang-ursa.xml
-          sudo pip install pygments-lexer-ursa
+          sudo pip install pygments-lexer-ursa linton num2words
           sudo apt-get -y install rsync linkchecker
           npm install
       - name: Build pages
@@ -53,7 +48,7 @@ jobs:
           npm run build
       - name: Check links
         run: |
-          node ./cgi-bin/server.js $TEST_PORT & linkchecker http://localhost:$TEST_PORT
+          linton serve --port $TEST_PORT & linkchecker http://localhost:$TEST_PORT
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

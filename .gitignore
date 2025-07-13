@@ -1,6 +1,7 @@
 package-lock.json
 pages/*bundle.js
 pages/latest-news*.*
+pages/note-number.txt
 node_modules/
 _site/
 *.pyc
