@@ -3,4 +3,3 @@ pages/*bundle.js
 pages/latest-news*.*
 node_modules/
 _site/
-*.pyc

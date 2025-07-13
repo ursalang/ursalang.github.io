@@ -26,5 +26,5 @@ $(async function () {
     $('#ursa-latest-release-version').text(latestRelease.data.tag_name)
     const date = new Date(Date.parse(latestRelease.data.created_at))
     $('#ursa-latest-release-date').text(date.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }))
-    $('#ursa-latest-release-notes').html(DOMPurify.sanitize(marked.parse(latestRelease.data.body)))
+    $('#ursa-latest-release-notes').html(DOMPurify.sanitize(marked.parse(latestRelease.data.body.trim())))
 })

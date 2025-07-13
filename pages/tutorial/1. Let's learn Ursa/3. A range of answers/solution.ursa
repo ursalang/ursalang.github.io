@@ -1,5 +1,5 @@
-let collatz = fn(n_) {
-  var n = n_
+let collatz = fn(start_n): Num {
+  var n = start_n
   var steps = 0
   loop {
     if n == 1 { break steps }

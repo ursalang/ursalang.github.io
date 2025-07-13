@@ -14,7 +14,7 @@ module.exports = {
     },
     plugins: [
         new NodePolyfillPlugin(),
-        new WatchExternalFilesPlugin({ files: ['./pages/**/*', './cgi-bin/**/*'] }),
+        new WatchExternalFilesPlugin({ files: ['./pages/**/*'] }),
     ],
     resolve: {
         alias: {

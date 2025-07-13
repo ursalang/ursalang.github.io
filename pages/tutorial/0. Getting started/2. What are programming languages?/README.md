@@ -1,7 +1,0 @@
-# Step 2: What are programming languages?
-
-A programming language, therefore, has two main audiences: human and machine. It must be *comprehensible* to humans: that is to say, human readers must be able without too much trouble to work out what the program is intended to do. It must be *tractable* for machines: that is, computers must be able to convert the program into instructions to perform.
-
-In the early days of computing, the first programming languages were made easy for the computer to read; they were correspondingly harder for humans to read, and less expressive of human intentions. As time went on, it became possible to make languages more human-centric; the only constraint was that computers had to be able to work out the meaning of a program unambiguously, with a feasible amount of processing power. The process of converting programming language into machine instructions remains deterministic and logically precise, while the processing power and memory required to perform the conversion can now be quite considerable—yet with the power of modern computers, even a mobile phone can perform this translation for programs of thousands of lines of code in a fraction of a second.
-
-$nextstep{../3. Why do we need programming languages%3F/,Why do we (still) need programming languages?}
