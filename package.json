@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "The Ursa programming language web demo and language site",
   "scripts": {
-    "prebuild": "./build-extras.sh",
+    "prebuild": "./build-extras.py",
     "build": "npm run prebuild && webpack && linton publish --force ./pages ./_site",
     "serve": "npm run prebuild && webpack watch & linton serve --port ${npm_package_config_test_port} pages"
   },

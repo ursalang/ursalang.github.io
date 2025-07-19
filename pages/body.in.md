@@ -18,8 +18,11 @@
         </div>
         <div class="card">
             <div class="card-header">Latest news (<span id="ursa-latest-news-date">$include(latest-news-date.txt)</span>)</div>
-            <div class="card-body link-card">$include(latest-news.html)
-                <div class="link-card-spacer"></div>
+            <div class="card-body link-card">
+
+$include(latest-news.md)
+
+<div class="link-card-spacer"></div>
                 <div><a class="btn btn-primary" id="ursa-latest-release-url" src="/news/index.html">More news</a></div>
             </div>
         </div>
