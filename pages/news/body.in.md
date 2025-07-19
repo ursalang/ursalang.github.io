@@ -2,6 +2,14 @@
 
 A summary of the main events around and about Ursa.
 
+## 2025
+
+### 19 July 2025
+
+The last updates to this site were about a lack of activity, and look how long it’s been since then! However, in recent weeks I’ve been making progress again: I have written initial code for Ursa’s static type checker, and migrated the web site from my personal string-and-sealing-wax site generator DarkGlass to my personal reasonably documented and somewhat tested site generator [Linton](https://rrthomas.github.io/linton).
+
+In recent months, I have also with the help of Daniel Shindler expanded the number of example programs on [Rosetta Code](https://www.rosettacode.org/wiki/Category:Ursa).
+
 ## 2024
 
 ### 18 July 2024
