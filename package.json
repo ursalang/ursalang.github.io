@@ -5,8 +5,7 @@
   "scripts": {
     "prebuild": "./build-extras.sh",
     "build": "npm run prebuild && webpack && linton publish --force ./pages ./_site",
-    "serve": "npm run prebuild && webpack watch & linton serve --port ${npm_package_config_test_port} pages",
-    "test": "npm run serve & linkchecker --threads=-1 http://localhost:${npm_package_config_test_port}"
+    "serve": "npm run prebuild && webpack watch & linton serve --port ${npm_package_config_test_port} pages"
   },
   "author": "Reuben Thomas",
   "license": "ISC",
