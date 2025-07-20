@@ -40,7 +40,7 @@ export function evaluate(name, getter) {
   return async function () {
     let output = ''
     globals.set('print', new NativeFn([new ArkTypedId('obj', ArkVal)], ArkNullVal, (obj) => {
-      output += toJs(obj).toString() + '\n'
+      output += String(toJs(obj)) + '\n'
       return ArkNull()
     }))
 
