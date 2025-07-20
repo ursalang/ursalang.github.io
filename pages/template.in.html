@@ -32,7 +32,8 @@
   </script>
   <nav class="navbar navbar-expand-md sticky-md-top bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="$run(path-to-root.in.py,$path)/index.html"><img width="48" height="48" alt="Mascot" title="Ursula" src="$run(path-to-root.in.py,$path)/favicon.png"></a>
+      <a class="navbar-brand" href="$run(path-to-root.in.py,$path)/index.html"><img width="48" height="48" alt="Mascot"
+          title="Ursula" src="$run(path-to-root.in.py,$path)/favicon.png"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-expanded="false" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,7 +52,8 @@
               <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/reference/">Language reference</a></li>
               <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/stdlib/">Standard libraries</a></li>
               <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/tutorial/">Tutorial</a></li>
-              <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/editor_support/">Editor/IDE support</a></li>
+              <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/editor_support/">Editor/IDE support</a>
+              </li>
               <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/roadmap/">Road map</a></li>
               <li><a class="dropdown-item" href="$run(path-to-root.in.py,$path)/rationale/">Rationale</a></li>
             </ul>
@@ -76,7 +78,8 @@
             <a class="nav-link btn" href="$run(path-to-root.in.py,$path)/blog/">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-primary highlight-button" href="$run(path-to-root.in.py,$path)/install/">Install</a>
+            <a class="nav-link btn btn-primary highlight-button"
+              href="$run(path-to-root.in.py,$path)/install/">Install</a>
           </li>
         </ul>
       </div>
@@ -84,22 +87,18 @@
           src="https://img.shields.io/github/v/release/ursalang/ursa?logo=github"></a>
     </div>
   </nav>
-  <nav class="navbar fixed-top bg-body-tertiary menu-navbar">
-    <div class="container-fluid">
-      <div>
-        <ul class="navbar-nav flex-column">
-          $include(menudirectory.in.html)
-        </ul>
-      </div>
+  <div class="container-fluid h-100 flex-grow-1 d-flex justify-content-center">
+    <div class="row flex-grow-1">
+      $include(side-menu.in.html)
+      <main>
+        <div class="container">
+          <div class="mt-1">
+            $run(markdown-to-html.in.py){$expand{$include(body.in.md)}}
+          </div>
+        </div>
+      </main>
     </div>
-  </nav>
-  <main>
-    <div class="container">
-      <div class="mt-1">
-        $run(markdown-to-html.in.py){$expand{$include(body.in.md)}}
-      </div>
-    </div>
-  </main>
+  </div>
 
   <footer class="footer">
     <div class="container">
