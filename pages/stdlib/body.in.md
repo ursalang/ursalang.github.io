@@ -29,7 +29,7 @@ The following basic constants and functions are available:
 
 ## Utilities
 
-The iterator $run(ursa.in.py,range) is provided. $run(ursa.in.py,range(n)) generates the integers from 0 to $run(ursa.in.py,n).
+The iterator $run(ursa.in.py,range) is provided. $run(ursa.in.py,range(n)) generates the integers from 0 to $run(ursa.in.py,n - 1).
 
 ## File system access
 
