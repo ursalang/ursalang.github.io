@@ -343,7 +343,7 @@ The $run(ursa.in.py,continue) expression jumps back to the top of a loop.
 There is a special form of loop for use with an iterator function, $run(ursa.in.py,for):
 
 $run(ursabox.in.py){
-for i of range(5) { print (i) }
+for i in range(5) { print (i) }
 }
 
 See [Iterators](#iterators).
@@ -373,7 +373,7 @@ Here is an example of a generator that takes a list as input, and returns its va
 
 $run(ursabox.in.py){
 let g = gen(l) {
-    for n of l.iter() { yield n * 2 }
+    for n in l.iter() { yield n * 2 }
 }
 }
 
